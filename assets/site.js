@@ -161,6 +161,11 @@ if(sch){var S=JSON.parse($('#schData').textContent),mode='basic',ph=$('#schPh');
 }
 
 
+/* hero video: vertical cut on phones */
+var hv=$('#heroV');
+if(hv){var vb=hv.dataset.base,vert=innerWidth<760&&innerHeight>innerWidth,nm=vert?'hero_v':'hero';hv.poster=vb+nm+'.jpg';var po=$('.hero2 .poster');if(po)po.src=vb+nm+'.jpg';
+  ['webm','mp4'].forEach(function(t){var s=document.createElement('source');s.src=vb+nm+'.'+t;s.type='video/'+t;hv.appendChild(s);});hv.load();var p=hv.play();if(p&&p.catch)p.catch(function(){});}
+
 /* who are you: digital home paths */
 var wt=$$('.who-tabs button');
 wt.forEach(function(b){b.addEventListener('click',function(){var i=b.dataset.w;wt.forEach(function(x){x.setAttribute('aria-pressed',x===b);});

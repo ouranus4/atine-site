@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/gold.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=5">
+<link rel="stylesheet" href="assets/site.css?v=6">
 </head>
 <body>
 <div class="proto"><b>Прототип</b> · Позначене [дужками] — заглушки до погодження з клієнтом.</div>
@@ -34,8 +34,8 @@
 </header>
 <main id="top">
 <section class="hero2" aria-label="ATINE">
-  <img class="poster" src="assets/video/hero_poster.jpg" alt="" aria-hidden="true">
-  <video autoplay muted loop playsinline preload="auto" poster="assets/video/hero_poster.jpg" aria-hidden="true"><source src="assets/video/hero.webm" type="video/webm"><source src="assets/video/hero.mp4" type="video/mp4"></video>
+  <img class="poster" src="assets/video/hero.jpg" alt="" aria-hidden="true">
+  <video id="heroV" autoplay muted loop playsinline preload="auto" poster="assets/video/hero.jpg" aria-hidden="true" data-base="assets/video/"></video>
   <canvas id="heroFx" aria-hidden="true"></canvas>
   <div class="wrap hero2-in">
     <div class="hero2-l">
@@ -71,7 +71,7 @@
   <div class="wrap">
     <div class="sh"><span class="lbl">Цифровий дім ATINE</span><h2>Оберіть свій <em>шлях</em></h2><p>Одна платформа для пацієнтів, родичів, лікарів і партнерів. Скажіть, хто ви, — і ми покажемо, з чого почати.</p></div>
     <div class="home3">
-      <div class="dna" id="dna"><canvas aria-hidden="true"></canvas><span class="lbl">Формула ATINE</span><span class="hint">Рухайте курсором</span><div class="cap"><b>26</b><span>активних компонентів в одній системі</span></div></div>
+      <div class="dna"><video autoplay muted loop playsinline preload="metadata" poster="assets/video/dna.jpg" aria-hidden="true"><source src="assets/video/dna.webm" type="video/webm"><source src="assets/video/dna.mp4" type="video/mp4"></video><span class="lbl">Формула ATINE</span><div class="cap"><b>26</b><span>активних компонентів в одній системі</span></div></div>
       <div class="who">
         <h3>Хто ви?</h3>
         <div class="who-tabs" role="group" aria-label="Хто ви?">
@@ -264,8 +264,8 @@
     <div class="bot"><span>© 1993–2026 ATINE®. Усі права захищені. Розробник формули: Doctor Bombushkar</span><span>Інформація на сайті не є медичною порадою.</span></div>
   </div>
 </footer>
-<script>window.ATINE_ROOT="";(function(){var l='uk';try{l=localStorage.getItem('atine-lang')||'uk';}catch(e){}if(['uk','ru','en'].indexOf(l)<0)l='uk';window.ATINE_LANG=l;document.documentElement.lang=l;if(l!=='uk')document.write('<script src="assets/i18n-'+l+'.js?v=5"><\/script>');})();</script>
-<script src="assets/site.js?v=5"></script>
+<script>window.ATINE_ROOT="";(function(){var l='uk';try{l=localStorage.getItem('atine-lang')||'uk';}catch(e){}if(['uk','ru','en'].indexOf(l)<0)l='uk';window.ATINE_LANG=l;document.documentElement.lang=l;if(l!=='uk')document.write('<script src="assets/i18n-'+l+'.js?v=6"><\/script>');})();</script>
+<script src="assets/site.js?v=6"></script>
 
 </body>
 </html>
