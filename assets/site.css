@@ -1054,3 +1054,38 @@ h1 em,h2 em,h3 em{font-style:normal}
   .toast.on{transform:none}
   .toast span{flex:1;min-width:0}
 }
+
+/* ===== preloader ===== */
+.pre{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:radial-gradient(120% 90% at 50% 40%,#163E7A 0%,#0A2A5B 45%,#040F26 100%);transition:opacity .8s ease,visibility .8s}
+.pre.done{opacity:0;visibility:hidden}
+.pre-on body{overflow:hidden}
+.pre-in{display:flex;flex-direction:column;align-items:center;gap:14px}
+.pre-in i{width:96px;height:96px;background:url(img/gold.png) center/contain no-repeat;filter:drop-shadow(0 0 22px rgba(214,194,166,.45));animation:preEm 1.4s cubic-bezier(.2,.8,.2,1) both,preGlow 2.4s ease-in-out .9s infinite}
+.pre-in b{display:flex;gap:.08em;font:600 34px/1 var(--f);letter-spacing:.28em;margin-right:-.28em}
+.pre-in b span{background:linear-gradient(100deg,#F3DFA8,#D6B46A 45%,#B48A3A 75%,#EBD08C);-webkit-background-clip:text;background-clip:text;color:transparent;animation:preL .8s cubic-bezier(.2,.8,.2,1) both}
+.pre-in b span:nth-child(1){animation-delay:.35s}.pre-in b span:nth-child(2){animation-delay:.45s}.pre-in b span:nth-child(3){animation-delay:.55s}.pre-in b span:nth-child(4){animation-delay:.65s}.pre-in b span:nth-child(5){animation-delay:.75s}
+.pre-in small{font:500 10.5px var(--f);letter-spacing:.38em;color:var(--gold);margin-right:-.38em;animation:preL .9s .95s both}
+.pre-in .bar{width:140px;height:1px;background:rgba(214,194,166,.2);margin-top:12px;overflow:hidden}
+.pre-in .bar em{display:block;height:100%;width:100%;background:linear-gradient(90deg,transparent,#D6C2A6,transparent);animation:preBar 1.4s ease-in-out infinite}
+@keyframes preEm{from{opacity:0;transform:scale(.85) rotate(-8deg)}}
+@keyframes preGlow{50%{filter:drop-shadow(0 0 34px rgba(214,194,166,.75))}}
+@keyframes preL{from{opacity:0;transform:translateY(10px)}}
+@keyframes preBar{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+@media (prefers-reduced-motion:reduce){.pre-in *{animation:none!important}}
+
+/* ===== hero: let the video breathe ===== */
+.hero2::before{background:linear-gradient(90deg,rgba(6,25,58,.55) 0%,rgba(6,25,58,.28) 30%,transparent 55%),linear-gradient(0deg,rgba(6,25,58,.55),transparent 22%)}
+.hero2 h1,.hero2 .sub,.hero2 .hero-logo,.hero2 .facts{text-shadow:0 2px 18px rgba(4,15,38,.55)}
+.hero2 .sub{color:#E3ECF8}
+@media (max-width:860px){
+  .hero2{display:block;min-height:0;background:var(--navy-2)}
+  .hero2 video,.hero2 .poster{position:relative;display:block;width:100%;height:64svh;min-height:420px;max-height:720px;object-position:60% 35%}
+  .hero2 .poster{position:absolute;top:0;left:0;height:64svh;min-height:420px;max-height:720px}
+  .hero2 canvas{height:64svh;min-height:420px;max-height:720px;bottom:auto}
+  .hero2::before{inset:0 0 auto;height:calc(64svh + 2px);min-height:422px;max-height:722px;background:linear-gradient(0deg,#06193A 0%,rgba(6,25,58,0) 22%)}
+  .hero2-in{position:relative;margin-top:-72px;padding-block:0 48px;background:linear-gradient(180deg,transparent 0,#06193A 72px)}
+  .hero2 h1,.hero2 .sub,.hero2 .hero-logo,.hero2 .facts{text-shadow:none}
+  .hero2 .scroll{display:none}
+}
+
+@media (min-width:861px){.hero2::before{background:linear-gradient(90deg,rgba(6,25,58,.66) 0%,rgba(6,25,58,.42) 32%,transparent 58%),linear-gradient(0deg,rgba(6,25,58,.5),transparent 22%)}.hero2 h1 em{text-shadow:0 2px 24px rgba(4,15,38,.8)}}
