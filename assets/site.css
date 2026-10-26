@@ -877,3 +877,6 @@ form.f{background:#fff;border-radius:20px;padding:24px;display:flex;flex-directi
 
 .cta-band.sm h2{font-size:clamp(22px,2.2vw,30px);max-width:30em;line-height:1.2;letter-spacing:-.02em}
 @media (max-width:400px){.hd .logo span{display:none}}
+
+.pc .media img,.gal img,.fs img,.citem .im img,.pcard .im img{mix-blend-mode:multiply}
+.pc .media img{border-radius:14px}
