@@ -876,7 +876,6 @@ form.f{background:#fff;border-radius:20px;padding:24px;display:flex;flex-directi
 }
 
 .cta-band.sm h2{font-size:clamp(22px,2.2vw,30px);max-width:30em;line-height:1.2;letter-spacing:-.02em}
-@media (max-width:400px){.hd .logo span{display:none}}
 
 .pc .media img,.gal img,.fs img,.citem .im img,.pcard .im img{mix-blend-mode:multiply}
 .pc .media img{border-radius:14px}
@@ -1020,3 +1019,19 @@ h1 em,h2 em,h3 em{font-style:normal}
 .hero2::before{background:linear-gradient(90deg,rgba(6,25,58,.9) 0%,rgba(6,25,58,.7) 34%,rgba(6,25,58,.12) 68%,rgba(6,25,58,0) 100%),linear-gradient(0deg,rgba(6,25,58,.8),transparent 32%)}
 .hero2 video{object-position:70% 50%}
 @media (max-width:860px){.hero2 video{object-position:60% 30%}.hero2::before{background:linear-gradient(0deg,rgba(6,25,58,.95) 35%,rgba(6,25,58,.35) 75%,rgba(6,25,58,.15))}}
+
+/* logo: stronger wordmark in header, big logo on the first screen */
+.logo b{background:linear-gradient(100deg,#B8892F 0%,#8A6418 45%,#6E4E10 70%,#A97C26 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+.logo small{color:#8A6418}
+.lang-m{display:none}
+.hero-logo{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.hero-logo i{width:62px;height:62px;background:url(img/gold.png) center/contain no-repeat;filter:drop-shadow(0 2px 10px rgba(214,194,166,.35))}
+.hero-logo b{display:block;font:600 34px/1 var(--f);letter-spacing:.24em;background:linear-gradient(100deg,#F3DFA8 0%,#D6B46A 40%,#B48A3A 70%,#EBD08C 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-logo small{display:block;font:500 10.5px var(--f);letter-spacing:.32em;color:var(--gold);margin-top:6px}
+.intro .hero-logo{animation:fu 1s cubic-bezier(.2,.8,.2,1) both}
+@media (max-width:1120px){.hd.open .lang-m{display:flex;align-self:flex-start;margin-top:14px}}
+@media (max-width:560px){
+  .hd-r>.lang{display:none}
+  .hd .logo span{display:block}.hd .logo small{display:none}.hd .logo b{font-size:16px}
+  .hero-logo{margin-bottom:20px}.hero-logo i{width:50px;height:50px}.hero-logo b{font-size:28px}
+}
