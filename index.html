@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/gold.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=3">
+<link rel="stylesheet" href="assets/site.css?v=4">
 </head>
 <body>
 <div class="proto"><b>Прототип</b> · Позначене [дужками] — заглушки до погодження з клієнтом.</div>
@@ -33,16 +33,19 @@
   </div>
 </header>
 <main id="top">
-<div class="wrap">
-  <section class="hero" aria-label="ATINE">
-    <div class="hero-l">
+<section class="hero2" aria-label="ATINE">
+  <img class="poster" src="assets/video/hero_poster.jpg" alt="" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="auto" poster="assets/video/hero_poster.jpg" aria-hidden="true"><source src="assets/video/hero.webm" type="video/webm"><source src="assets/video/hero.mp4" type="video/mp4"></video>
+  <canvas id="heroFx" aria-hidden="true"></canvas>
+  <div class="wrap hero2-in">
+    <div class="hero2-l">
       <span class="eyebrow-h"><i aria-hidden="true"></i>Науково досліджений нутрицевтик ATINE</span>
-      <h1>Підтримка організму <em>під час онкотерапії</em></h1>
-      <p class="sub">Стандартизований екстракт 26 лікарських коренів, виготовлений на фармацевтичному заводі. Допомагає організму легше переносити навантаження лікування — разом із терапією, яку призначив ваш лікар.</p>
+      <h1>Наука на стороні <em>життя</em></h1>
+      <p class="sub">Стандартизований екстракт 26 лікарських коренів для підтримки організму під час онкотерапії. Виготовлений на фармацевтичному заводі й застосовується разом із лікуванням, яке призначив ваш лікар.</p>
       <div class="cta">
-        <a class="pill pill-dark" href="patsiyentam/">Пацієнтам<span class="ar" aria-hidden="true">→</span></a>
+        <a class="pill pill-sage" href="patsiyentam/">Пацієнтам<span class="ar" aria-hidden="true">→</span></a>
         <a class="pill pill-line" href="likaryam/">Лікарям</a>
-        <a class="pill pill-sage" href="produkty/">Купити</a>
+        <a class="pill pill-line" href="produkty/">Купити</a>
       </div>
       <div class="facts">
         <div><b data-count>2009</b><span>рік реєстрації ТУ в МОЗ</span></div>
@@ -51,20 +54,41 @@
         <div><b data-count>5</b><span>наукових публікацій</span></div>
       </div>
     </div>
-    <div class="hero-r">
-      <img src="assets/img/hero_caps.jpg" alt="Баночка ATINE, 600 мг, 75 капсул" style="object-position:50% 50%">
-      <a class="fl fl-tr" href="produkty/">Купити</a>
-      <div class="glass hero-glass">
+    <div class="hero2-r"><div class="glass hero-glass">
         <span class="lbl">Доклінічні дослідження 2025–26</span>
         <div><div class="m"><span>Allium cepa · мітотичний індекс</span><b>−52%</b></div><div class="bars"><i style="width:100%"></i><i style="width:48%"></i></div></div>
         <div><div class="m"><span>Comet assay · ДНК-стрес</span><b>10%</b></div><div class="bars"><i style="width:33%"></i><i style="width:100%;opacity:.35"></i></div></div>
         <div class="m"><span>Drosophila · репарація</span><b>ATR · XPF</b></div>
         <a class="more" href="nauka/#preclinical">Усі дані досліджень →</a>
       </div>
-      <a class="fl fl-bl" href="pro-brend/#founder"><img src="assets/img/doc_new_sq.jpg" alt=""><span>Doctor Bombushkar<small>Засновник · розробник формули</small></span></a>
+      <a class="fl" href="pro-brend/#founder"><img src="assets/img/doc_new_sq.jpg" alt=""><span>Doctor Bombushkar<small>Засновник · розробник формули</small></span></a>
     </div>
-  </section>
-</div>
+  </div>
+  <span class="scroll" aria-hidden="true"></span>
+</section>
+
+<section class="sec" id="home">
+  <div class="wrap">
+    <div class="sh"><span class="lbl">Цифровий дім ATINE</span><h2>Оберіть свій <em>шлях</em></h2><p>Одна платформа для пацієнтів, родичів, лікарів і партнерів. Скажіть, хто ви, — і ми покажемо, з чого почати.</p></div>
+    <div class="home3">
+      <div class="dna" id="dna"><canvas aria-hidden="true"></canvas><span class="lbl">Формула ATINE</span><span class="hint">Рухайте курсором</span><div class="cap"><b>26</b><span>активних компонентів в одній системі</span></div></div>
+      <div class="who">
+        <h3>Хто ви?</h3>
+        <div class="who-tabs" role="group" aria-label="Хто ви?">
+          <button type="button" data-w="0" aria-pressed="true"><i aria-hidden="true">✦</i><b>Пацієнт</b></button>
+          <button type="button" data-w="1" aria-pressed="false"><i aria-hidden="true">♡</i><b>Родич</b></button>
+          <button type="button" data-w="2" aria-pressed="false"><i aria-hidden="true">✚</i><b>Лікар</b></button>
+          <button type="button" data-w="3" aria-pressed="false"><i aria-hidden="true">◈</i><b>Партнер</b></button>
+        </div>
+        <div class="who-p" data-p="0"><p class="t">Почніть зі спокійного пояснення: що таке ATINE, як його приймати і як поєднувати з лікуванням.</p><a href="patsiyentam/#what"><span class="k">01</span>Що таке ATINE і навіщо він потрібен<span class="circ" aria-hidden="true">→</span></a><a href="skhemy-pryyomu/"><span class="k">02</span>Як приймати: схема прийому<span class="circ" aria-hidden="true">→</span></a><a href="patsiyentam/#faq"><span class="k">03</span>Безпека і поєднання з лікуванням<span class="circ" aria-hidden="true">→</span></a><a href="kontakty/?type=patient"><span class="k">04</span>Отримати консультацію<span class="circ" aria-hidden="true">→</span></a></div>
+        <div class="who-p" data-p="1" hidden><p class="t">Перевірте все, що вас турбує: документи, публікації і чесні межі доказів.</p><a href="pro-brend/#documents"><span class="k">01</span>Документи та патенти<span class="circ" aria-hidden="true">→</span></a><a href="doslidzhennya/"><span class="k">02</span>Наукові публікації<span class="circ" aria-hidden="true">→</span></a><a href="nauka/#network"><span class="k">03</span>Що встановлено, а що ні<span class="circ" aria-hidden="true">→</span></a><a href="kontakty/?type=patient"><span class="k">04</span>Поговорити з консультантом<span class="circ" aria-hidden="true">→</span></a></div>
+        <div class="who-p" data-p="2" hidden><p class="t">Наукові дані з рівнями доказовості, фітохімічний профіль і матеріали для фахівців.</p><a href="likaryam/#summary"><span class="k">01</span>Резюме продукту<span class="circ" aria-hidden="true">→</span></a><a href="likaryam/#mechanisms"><span class="k">02</span>Механізми дії<span class="circ" aria-hidden="true">→</span></a><a href="likaryam/#faq-doc"><span class="k">03</span>Запитання лікаря<span class="circ" aria-hidden="true">→</span></a><a href="likaryam/#request"><span class="k">04</span>Запросити протоколи<span class="circ" aria-hidden="true">→</span></a></div>
+        <div class="who-p" data-p="3" hidden><p class="t">Бренд із юридичним захистом, GMP-виробництвом і науковою програмою.</p><a href="partneram/#value"><span class="k">01</span>Цінність для партнерів<span class="circ" aria-hidden="true">→</span></a><a href="eksperty/"><span class="k">02</span>Експерти та науковий совет<span class="circ" aria-hidden="true">→</span></a><a href="pro-brend/#documents"><span class="k">03</span>Виробництво і документи<span class="circ" aria-hidden="true">→</span></a><a href="partneram/#partner-form"><span class="k">04</span>Запит партнера<span class="circ" aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec need" id="need">
   <div class="wrap">
     <div class="sh"><span class="lbl">Навіщо це потрібно</span><h2>Лікування діє на весь організм. <em>ATINE підтримує його з трьох боків.</em></h2><p>Протипухлинна терапія — це тривале навантаження не лише на пухлину, а й на нервову систему, клітини та сили людини. ATINE не замінює лікування, а допомагає організму його проходити.</p></div>
@@ -240,8 +264,8 @@
     <div class="bot"><span>© 1993–2026 ATINE®. Усі права захищені. Розробник формули: Doctor Bombushkar</span><span>Інформація на сайті не є медичною порадою.</span></div>
   </div>
 </footer>
-<script>window.ATINE_ROOT="";(function(){var l='uk';try{l=localStorage.getItem('atine-lang')||'uk';}catch(e){}if(['uk','ru','en'].indexOf(l)<0)l='uk';window.ATINE_LANG=l;document.documentElement.lang=l;if(l!=='uk')document.write('<script src="assets/i18n-'+l+'.js?v=3"><\/script>');})();</script>
-<script src="assets/site.js?v=3"></script>
+<script>window.ATINE_ROOT="";(function(){var l='uk';try{l=localStorage.getItem('atine-lang')||'uk';}catch(e){}if(['uk','ru','en'].indexOf(l)<0)l='uk';window.ATINE_LANG=l;document.documentElement.lang=l;if(l!=='uk')document.write('<script src="assets/i18n-'+l+'.js?v=4"><\/script>');})();</script>
+<script src="assets/site.js?v=4"></script>
 
 </body>
 </html>
