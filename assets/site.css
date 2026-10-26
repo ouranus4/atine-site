@@ -1035,3 +1035,22 @@ h1 em,h2 em,h3 em{font-style:normal}
   .hd .logo span{display:block}.hd .logo small{display:none}.hd .logo b{font-size:16px}
   .hero-logo{margin-bottom:20px}.hero-logo i{width:50px;height:50px}.hero-logo b{font-size:28px}
 }
+
+/* who panels: persona photo */
+.who-ph{margin:0 0 8px;border-radius:18px;overflow:hidden;aspect-ratio:16/8;background:var(--card)}
+.who-ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.who-p:hover .who-ph img{transform:scale(1.03)}
+/* network: emblem in the core, gold line icons in the nodes */
+.net-core{width:150px;height:150px}
+.net-core .em{display:block;width:54px;height:54px;margin:0 auto 6px;background:url(img/gold.png) center/contain no-repeat;filter:drop-shadow(0 2px 8px rgba(214,194,166,.4))}
+.net-core b{font-size:14px}
+.nd i svg{width:26px;height:26px}
+.nd i{color:var(--gold-t)}
+.nd:hover i,.nd[aria-pressed="true"] i{color:var(--gold)}
+@media (max-width:560px){.net-core{width:112px;height:112px}.net-core .em{width:38px;height:38px;margin-bottom:3px}.net-core b{font-size:12px}.net-core small{font-size:8.5px}.nd i svg{width:20px;height:20px}}
+/* cart toast: a tidy card on phones instead of a squashed pill */
+@media (max-width:560px){
+  .toast{left:12px;right:12px;bottom:12px;transform:translateY(20px);border-radius:18px;padding:12px 12px 12px 16px;justify-content:space-between;max-width:none;font-size:13.5px;line-height:1.35}
+  .toast.on{transform:none}
+  .toast span{flex:1;min-width:0}
+}
