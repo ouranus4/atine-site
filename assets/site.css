@@ -1290,3 +1290,9 @@ video::-webkit-media-controls,video::-webkit-media-controls-start-playback-butto
   .strip .st:last-child{grid-column:1/-1;min-height:180px}
   .st .lbl{font-size:10px}.st p.c{font-size:12px}
 }
+
+/* ===== v13: rotating emblems + Safari video fallback ===== */
+.logo i,.net-core .em{animation:emSpin 40s linear infinite!important;will-change:transform}
+.hero2 .vfb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;z-index:-3}
+.dna .vfb,.pban .ph .vfb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.hero2 .vfb{position:relative;display:block;height:58svh;min-height:380px;max-height:620px;object-position:60% 35%}}

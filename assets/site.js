@@ -162,16 +162,18 @@ if(sch){var S=JSON.parse($('#schData').textContent),mode='basic',ph=$('#schPh');
 
 
 /* autoplay: phones only allow it for muted inline video; retry on first gesture */
+/* Safari (incl. iPhone Low Power Mode) refuses video autoplay but plays an mp4 inside <img> */
+function imgFallback(v){if(v._img||!/Apple/.test(navigator.vendor||''))return;var s=v.querySelector('source[type="video/mp4"]');if(!s)return;
+  var im=document.createElement('img');im.alt='';im.setAttribute('aria-hidden','true');im.className='vfb';im.src=s.src;v._img=im;v.parentNode.insertBefore(im,v);v.style.display='none';}
 function autoplay(v){if(!v)return;v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');v.controls=false;
-  var go=function(){var p=v.play();if(p&&p.catch)p.catch(function(){});};go();
+  var go=function(){if(v._img)return;var p=v.play();if(p&&p.catch)p.catch(function(e){if(e&&e.name==='NotAllowedError')imgFallback(v);});};go();
   v.addEventListener('loadeddata',go);v.addEventListener('canplay',go);
   ['touchstart','scroll','pointerdown','keydown'].forEach(function(e){addEventListener(e,function h(){go();removeEventListener(e,h);},{passive:true,once:true});});
   document.addEventListener('visibilitychange',function(){if(!document.hidden)go();});
   if('IntersectionObserver'in window)new IntersectionObserver(function(es){if(es[0].isIntersecting)go();else v.pause();}).observe(v);}
 /* hero video: vertical cut on phones */
 var hv=$('#heroV');
-if(hv){var vb=hv.dataset.base,vert=innerWidth<760&&innerHeight>innerWidth,nm=vert?'hero_v':'hero';hv.poster=vb+nm+'.jpg';var po=$('.hero2 .poster');if(po)po.src=vb+nm+'.jpg';
-  ['webm','mp4'].forEach(function(t){var s=document.createElement('source');s.src=vb+nm+'.'+t;s.type='video/'+t;hv.appendChild(s);});hv.load();autoplay(hv);}
+if(hv)autoplay(hv);
 $$('video[autoplay]').forEach(function(v){if(v!==hv)autoplay(v);});
 
 /* quiz: which form suits you */
