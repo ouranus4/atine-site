@@ -174,7 +174,7 @@ function autoplay(v){if(!v)return;v.muted=true;v.defaultMuted=true;v.setAttribut
 /* hero video: vertical cut on phones */
 var hv=$('#heroV');
 if(hv)autoplay(hv);
-$$('video[autoplay]').forEach(function(v){if(v!==hv)autoplay(v);});
+$$('video[autoplay]').forEach(function(v){if(v===hv)return;if(/Apple/.test(navigator.vendor||'')){v._img=null;imgFallback(v);if(v._img){v.removeAttribute('autoplay');v.preload='none';return;}}autoplay(v);});
 
 /* quiz: which form suits you */
 $$('.qz').forEach(function(q){var ans=[],steps=$$('.qz-step',q),bar=$('.qz-bar i',q);
