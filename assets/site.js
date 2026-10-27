@@ -189,6 +189,11 @@ $$('[data-more]').forEach(function(b){var box=document.getElementById(b.dataset.
   b.addEventListener('click',function(){box.classList.remove('short');b.remove();});
   $$('[data-filter="'+b.dataset.more+'"] button').forEach(function(f){f.addEventListener('click',function(){box.classList.remove('short');b.remove();});});});
 
+/* channel video: YouTube player only after a click (keeps the page light) */
+$$('.mf-v').forEach(function(b){b.addEventListener('click',function(){var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';f.title=b.getAttribute('aria-label');
+  f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.className='mf-if';b.replaceWith(f);});});
+
 /* who are you: digital home paths */
 var wt=$$('.who-tabs button');
 wt.forEach(function(b){b.addEventListener('click',function(){var i=b.dataset.w;wt.forEach(function(x){x.setAttribute('aria-pressed',x===b);});
