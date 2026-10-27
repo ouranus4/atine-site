@@ -133,6 +133,10 @@ $$('.msw').forEach(function(m){var tabs=$$('.msw-tabs button',m),pn=$('.msw-pane
   function show(i,f){cur=(i+tabs.length)%tabs.length;tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===cur);t.tabIndex=j===cur?0:-1;});if(f)tabs[cur].focus();
     pn.classList.add('sw');clearTimeout(tm);tm=setTimeout(function(){paint();pn.classList.remove('sw');},180);}
   tabs.forEach(function(t,j){t.addEventListener('click',function(){show(j);});t.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();show(cur+1,true);}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();show(cur-1,true);}});});
+  $$('.track button',m).forEach(function(b){b.addEventListener('click',function(){show(+b.dataset.i);});});
+  var pv=$('.mprev',m),nx=$('.mnext',m);if(pv)pv.addEventListener('click',function(){show(cur-1);});if(nx)nx.addEventListener('click',function(){show(cur+1);});
+  var sx=null;pn.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  pn.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));},{passive:true});
   lvb.forEach(function(b){b.addEventListener('click',function(){lvl=b.dataset.l;lvb.forEach(function(x){x.setAttribute('aria-pressed',x===b);});pn.classList.add('sw');setTimeout(function(){paint();pn.classList.remove('sw');},180);});});
   paint();});
 
