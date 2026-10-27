@@ -1348,3 +1348,13 @@ video::-webkit-media-controls,video::-webkit-media-controls-start-playback-butto
 .msw-panel .track button:focus-visible b{outline:2px solid var(--gold);outline-offset:2px}
 .msw-panel .track button:hover b{border-color:var(--gold)}
 @media (max-width:560px){.msw-panel .track span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;display:block}.msw-panel .track{justify-content:space-around}}
+
+/* ===== v18: sub-sections visible in the mobile menu ===== */
+@media (max-width:1120px){
+  .hd.open .dd{display:flex!important;flex-direction:column;position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;background:transparent;min-width:0;padding:0 0 10px 14px;margin-top:-4px}
+  .hd.open .dd a{padding:7px 0;font-size:14px;color:var(--muted);border-radius:0}
+  .hd.open .dd a::before{content:"— ";color:var(--gold-t)}
+  .hd.open .nav>div>a{border-bottom:0;padding-bottom:6px}
+  .hd.open .nav>div{border-bottom:1px solid var(--line)}
+  .hd.open .nav{max-height:calc(100svh - 72px);overflow:auto;-webkit-overflow-scrolling:touch}
+}
