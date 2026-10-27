@@ -190,9 +190,9 @@ $$('[data-more]').forEach(function(b){var box=document.getElementById(b.dataset.
   $$('[data-filter="'+b.dataset.more+'"] button').forEach(function(f){f.addEventListener('click',function(){box.classList.remove('short');b.remove();});});});
 
 /* channel video: YouTube player only after a click (keeps the page light) */
-$$('.mf-v').forEach(function(b){b.addEventListener('click',function(){var f=document.createElement('iframe');
-  f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';f.title=b.getAttribute('aria-label');
-  f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.className='mf-if';b.replaceWith(f);});});
+$$('.mf-v').forEach(function(b){b.addEventListener('click',function(){var v=document.createElement('video');
+  v.src=b.dataset.src;v.controls=true;v.autoplay=true;v.playsInline=true;v.setAttribute('playsinline','');v.preload='auto';v.className='mf-if';v.poster=b.querySelector('img').src;
+  b.replaceWith(v);var p=v.play();if(p&&p.catch)p.catch(function(){});});});
 
 /* who are you: digital home paths */
 var wt=$$('.who-tabs button');
