@@ -1225,3 +1225,33 @@ video::-webkit-media-controls,video::-webkit-media-controls-start-playback-butto
 .plist2.four{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:1120px){.plist2.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.plist2.four{grid-template-columns:1fr}.pill{white-space:normal;height:auto;min-height:44px;padding-top:10px;padding-bottom:10px;line-height:1.25}}
+
+/* ===== v11: premium pass — patients, brand, experts, partners ===== */
+.ic2.ico{width:52px;height:52px;background:transparent;border:1px solid var(--gold);color:var(--gold-t)}
+.ic2.ico svg{width:24px;height:24px}
+.grid3 .card,.ptypes .card{background:#fff;border:1px solid var(--line);transition:box-shadow .3s,transform .3s}
+.grid3 .card:hover,.ptypes .card:hover{transform:translateY(-3px);box-shadow:0 30px 60px -38px rgba(10,42,91,.35)}
+.pv .card{background:#fff;border:1px solid var(--line)}
+.pv .card.dk{border:0}
+.pv b.big2{color:var(--gold-t)}
+.pv .card.dk b.big2{color:var(--gold)}
+/* experts page: featured founder, calmer initials */
+.exp-page .ex .card:first-child{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr}
+.exp-page .ex .card:first-child .ph{aspect-ratio:auto;min-height:360px;height:100%}
+.exp-page .ex .card:first-child .bd{padding:32px;justify-content:center}
+.exp-page .ex .card:first-child h3{font-size:clamp(28px,2.8vw,38px)}
+.ex .card{background:#fff;border:1px solid var(--line)}
+.ex .ph.ini{font-size:46px;letter-spacing:.02em}
+@media (max-width:860px){.exp-page .ex .card:first-child{grid-column:auto;grid-template-columns:1fr}.exp-page .ex .card:first-child .ph{min-height:300px}}
+/* brand page: timeline, reviews, docs */
+.tl2::before{background:linear-gradient(90deg,var(--gold),var(--line))}
+.tl2 div::before{border-color:var(--gold-t);background:var(--ivory)}
+.tl2 b{color:var(--navy)}
+.rev{background:#fff;border:1px solid var(--line)}
+.rev h3{color:var(--navy)}
+.rev footer i{background:var(--navy);color:var(--gold)}
+.vid{border-radius:24px}
+.inst .card{border-radius:20px}
+.inst .lg{background:var(--navy);color:var(--gold)}
+.exp-page .ex .card:not(:first-child) .ph.ini{width:72px;height:72px;aspect-ratio:1/1;border-radius:50%;margin:24px 24px 0;font-size:22px;border:1px solid var(--gold)}
+.exp-page .ex .card:not(:first-child) .bd{padding-top:16px}
