@@ -1255,3 +1255,38 @@ video::-webkit-media-controls,video::-webkit-media-controls-start-playback-butto
 .inst .lg{background:var(--navy);color:var(--gold)}
 .exp-page .ex .card:not(:first-child) .ph.ini{width:72px;height:72px;aspect-ratio:1/1;border-radius:50%;margin:24px 24px 0;font-size:22px;border:1px solid var(--gold)}
 .exp-page .ex .card:not(:first-child) .bd{padding-top:16px}
+
+/* ===== v12: speed + mobile fixes ===== */
+/* no live blur over moving video: solid surfaces are much cheaper on phones */
+.hd{background:rgba(255,255,255,.97);backdrop-filter:none;-webkit-backdrop-filter:none}
+.hero2 .glass,.hero2 .eyebrow-h,.hero2 .fl,.glass,.toast,.fl{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.hero2 .glass{background:rgba(6,25,58,.78)}
+.hero2 .eyebrow-h{background:rgba(6,25,58,.55)}
+.st .glass{background:rgba(6,25,58,.7)}
+/* logo: calm, slow turn only (no orbit, no shimmer) */
+.hero-logo b{animation:none;background-size:100% 100%}
+.hero-logo .em-wrap i{animation:emSpin 40s linear infinite!important;will-change:transform}
+.net-svg line.on{animation:none}
+/* first screen on phones: video + headline, without the extra cards */
+@media (max-width:860px){
+  .hero2-r,.hero2 .eyebrow-h{display:none}
+  .hero2 video,.hero2 .poster,.hero2::before{height:58svh;min-height:380px;max-height:620px}
+  .hero2 .poster{height:58svh}
+  .hero2 h1{font-size:clamp(40px,11vw,56px)}
+  .hero2 .sub{font-size:16px;margin-top:16px}
+  .hero2 .facts{margin-top:30px}
+  .dna{min-height:260px}
+}
+/* faces stay in frame on narrow screens */
+.pdb#patients .ph img{object-position:82% 35%}
+.pdb#for-doctors .ph img{object-position:58% 50%}
+.pban .ph img{object-position:50% 22%}
+.who-ph img{object-position:60% 28%}
+/* science strip on phones: shorter, two small cards per row */
+@media (max-width:560px){
+  .strip{grid-template-columns:1fr 1fr;gap:10px}
+  .strip .st:first-child{grid-column:1/-1;min-height:0}
+  .strip .st:not(:first-child){min-height:200px;padding:14px}
+  .strip .st:last-child{grid-column:1/-1;min-height:180px}
+  .st .lbl{font-size:10px}.st p.c{font-size:12px}
+}
