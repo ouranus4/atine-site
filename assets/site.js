@@ -172,7 +172,7 @@ function autoplay(v){if(!v)return;v.muted=true;v.defaultMuted=true;v.setAttribut
 var hv=$('#heroV');
 if(hv){var vb=hv.dataset.base,vert=innerWidth<760&&innerHeight>innerWidth,nm=vert?'hero_v':'hero';hv.poster=vb+nm+'.jpg';var po=$('.hero2 .poster');if(po)po.src=vb+nm+'.jpg';
   ['webm','mp4'].forEach(function(t){var s=document.createElement('source');s.src=vb+nm+'.'+t;s.type='video/'+t;hv.appendChild(s);});hv.load();autoplay(hv);}
-$$('.dna video').forEach(autoplay);
+$$('video[autoplay]').forEach(function(v){if(v!==hv)autoplay(v);});
 
 /* quiz: which form suits you */
 $$('.qz').forEach(function(q){var ans=[],steps=$$('.qz-step',q),bar=$('.qz-bar i',q);
@@ -181,6 +181,11 @@ $$('.qz').forEach(function(q){var ans=[],steps=$$('.qz-step',q),bar=$('.qz-bar i
     steps.forEach(function(s){s.hidden=true;});$$('.qz-res',q).forEach(function(x){x.hidden=x.dataset.r!==r;});bar.style.width='100%';}
   steps.forEach(function(s,i){$$('button',s).forEach(function(b){b.addEventListener('click',function(){ans[i]=b.dataset.v;if(i<steps.length-1)step(i+1);else result();});});});
   $$('.qz-again',q).forEach(function(b){b.addEventListener('click',function(){ans=[];step(0);});});step(0);});
+
+/* documents: show the first six, then expand */
+$$('[data-more]').forEach(function(b){var box=document.getElementById(b.dataset.more);if(!box)return;box.classList.add('short');
+  b.addEventListener('click',function(){box.classList.remove('short');b.remove();});
+  $$('[data-filter="'+b.dataset.more+'"] button').forEach(function(f){f.addEventListener('click',function(){box.classList.remove('short');b.remove();});});});
 
 /* who are you: digital home paths */
 var wt=$$('.who-tabs button');
