@@ -254,3 +254,19 @@ sel.forEach(function(s){var seen=new Map();$$(s).forEach(function(el){if(el.clas
 $$('[data-count]').forEach(function(el){var m=el.textContent.trim().match(/^(\d+)(?:,(\d+))?(.*)$/);if(!m||!below(el))return;var dec=m[2]||'',t=parseFloat(m[1]+'.'+(dec||0)),rest=m[3],fin=el.textContent;
   el._c=function(){var t0=performance.now();(function f(n){var k=Math.min(1,(n-t0)/1400),v=t*(1-Math.pow(1-k,4));el.textContent=(dec?v.toFixed(dec.length).replace('.',','):Math.round(v))+rest;if(k<1)requestAnimationFrame(f);else el.textContent=fin;})(t0);};io.observe(el);});
 })();
+/* certificates lightbox (v21) */
+(function(){
+var links=[].slice.call(document.querySelectorAll('a[data-lb]'));if(!links.length)return;
+var lb=document.createElement('div');lb.className='lb';lb.hidden=true;lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');
+lb.innerHTML='<button type="button" class="lb-x" aria-label="Закрити">×</button><button type="button" class="lb-nav lb-p" aria-label="Попередній">‹</button><button type="button" class="lb-nav lb-n" aria-label="Наступний">›</button><figure style="margin:0;text-align:center"><img alt=""><figcaption class="lb-cap"></figcaption></figure>';
+document.body.appendChild(lb);
+var im=lb.querySelector('img'),cap=lb.querySelector('.lb-cap'),cur=0,last=null;
+function show(i){cur=(i+links.length)%links.length;var a=links[cur];im.src=a.getAttribute('href');var t=a.querySelector('img');im.alt=t?t.alt:'';var b=a.querySelector('b'),s=a.querySelector('small');cap.textContent=(b?b.textContent:'')+(s?' · '+s.textContent:'');}
+function open(i){last=document.activeElement;show(i);lb.hidden=false;document.documentElement.classList.add('lb-open');requestAnimationFrame(function(){lb.classList.add('on');});lb.querySelector('.lb-x').focus();}
+function close(){lb.classList.remove('on');document.documentElement.classList.remove('lb-open');setTimeout(function(){lb.hidden=true;im.removeAttribute('src');},200);if(last)last.focus();}
+links.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();open(i);});});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-x'))close();});
+lb.querySelector('.lb-p').addEventListener('click',function(){show(cur-1);});
+lb.querySelector('.lb-n').addEventListener('click',function(){show(cur+1);});
+document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+})();
