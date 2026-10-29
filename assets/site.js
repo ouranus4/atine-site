@@ -270,3 +270,11 @@ lb.querySelector('.lb-p').addEventListener('click',function(){show(cur-1);});
 lb.querySelector('.lb-n').addEventListener('click',function(){show(cur+1);});
 document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
 })();
+/* botanical line drawing on scroll (v22) */
+(function(){
+var els=[].slice.call(document.querySelectorAll('.bot,.sdeco'));if(!els.length)return;
+if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver'in window))return;
+document.documentElement.classList.add('bdraw');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('drawn');io.unobserve(e.target);}});},{threshold:.15});
+els.forEach(function(el){io.observe(el);});
+})();
