@@ -219,7 +219,7 @@ if(hc&&!RM){var H2=hc.parentNode,S,pts=[],mx=-999,my=-999,vis=true;
       if(d<160){p.vx+=dx/d*.012;p.vy+=dy/d*.012;}p.vx*=.985;p.vy=p.vy*.985-.002;p.x+=p.vx;p.y+=p.vy;
       if(p.y<-10){p.y=S.h+10;p.x=Math.random()*S.w;}if(p.x<-10)p.x=S.w+10;if(p.x>S.w+10)p.x=-10;
       x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle='rgba(232,212,176,'+p.a+')';x.fill();
-      if(d<160){x.beginPath();x.moveTo(p.x,p.y);x.lineTo(mx,my);x.strokeStyle='rgba(214,194,166,'+(.18*(1-d/160))+')';x.lineWidth=.6;x.stroke();}}})();}
+      if(d<160){x.beginPath();x.moveTo(p.x,p.y);x.lineTo(mx,my);x.strokeStyle='rgba(216,168,84,'+(.18*(1-d/160))+')';x.lineWidth=.6;x.stroke();}}})();}
 
 /* digital home: rotating DNA of gold and blue beads */
 var dn=$('#dna');
@@ -231,7 +231,7 @@ if(dn){var dc=$('canvas',dn),D2,ang=0,spd=.008,tilt=.35,tgt=.008,tt=.35,dv=true;
   function drawD(){var x=D2.x,w=D2.w,h=D2.h;x.clearRect(0,0,w,h);var N=26,top=h*.1,bot=h*.86,R=Math.min(w*.3,160),cx=w*.5,items=[];
     for(var i=0;i<N;i++){var t=i/(N-1),y=top+(bot-top)*t,a=ang+t*Math.PI*3.2;
       for(var s=0;s<2;s++){var aa=a+s*Math.PI,z=Math.sin(aa);items.push({x:cx+Math.cos(aa)*R,y:y+z*R*tilt*.35,z:z,s:s,i:i});}}
-    for(var j=0;j<N;j++){var p=items[j*2],q=items[j*2+1];x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.strokeStyle='rgba(214,194,166,.22)';x.lineWidth=1;x.stroke();}
+    for(var j=0;j<N;j++){var p=items[j*2],q=items[j*2+1];x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.strokeStyle='rgba(216,168,84,.22)';x.lineWidth=1;x.stroke();}
     items.sort(function(u,v){return u.z-v.z;});
     items.forEach(function(p){var k=(p.z+1)/2,r=5+k*9,al=.35+k*.65;
       if(p.s===0)bead(x,p.x,p.y,r,'rgba(255,240,205,'+al+')','rgba(168,135,74,'+al+')');else bead(x,p.x,p.y,r,'rgba(196,220,250,'+al+')','rgba(30,70,140,'+al+')');});}
