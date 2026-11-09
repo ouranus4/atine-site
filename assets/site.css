@@ -1677,3 +1677,17 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 .pre-in::before{display:none!important}
 .pre-logo{animation:preLogo 1.1s cubic-bezier(.2,.8,.2,1) both,preGlowLogo 2.6s ease-in-out 1.1s infinite!important}
 @media (max-width:759px){.pre-v{width:100%!important;object-fit:cover!important}}
+
+/* v45: desktop loader fills the whole screen — blurred glow of the same animation behind the sharp helix */
+.pre-bg{display:none}
+@media (min-width:760px){
+  .pre-bg{display:block;position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;filter:blur(38px) saturate(1.5) brightness(.9);transform:scale(1.05);z-index:0}
+  .pre-v{position:relative!important;z-index:1;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%)}
+  .pre-stage::after{z-index:1}
+}
+/* v45b: loader logo never depends on an entrance animation (iOS low-power / in-app browsers can freeze them at opacity 0) */
+.pre-logo,.pre-word,.pre-in small,.pre-in b,.pre-in i,.pre-foot,.pre-pct,.pre-bar{opacity:1!important;visibility:visible!important;animation:none!important;transform:none!important}
+.pre-word{letter-spacing:.3em!important}
+/* v45b: header and first-screen logos never wait for an entrance animation */
+.hero-logo,.intro .hero-logo,.logo,.logo i,.hero-logo .em-wrap{opacity:1!important;visibility:visible!important}
+.intro .hero-logo{animation:none!important}
