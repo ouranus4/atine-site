@@ -1653,3 +1653,8 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 .hero-logo b{background:none!important;-webkit-text-fill-color:currentColor!important;color:#F0CD7E!important;text-shadow:0 0 14px rgba(240,200,110,.45)}
 .hd.open .logo-m b{color:#8E6420!important}
 .hero-logo small{color:#F3DFA8}
+/* ===== v40: iPhone — keep the logo above the playing video, no CSS filters on video ===== */
+.pre-v{filter:none!important;z-index:0;-webkit-transform:translateZ(0);transform:translateZ(0)}
+.pre::before{z-index:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
+.pre-in{z-index:5!important;-webkit-transform:translate3d(0,0,1px);transform:translate3d(0,0,1px);will-change:transform}
+.pre-logo{position:relative;z-index:6}
