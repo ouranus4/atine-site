@@ -1665,3 +1665,5 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 .pre-v{position:static!important;inset:auto!important;transform:none!important;opacity:1!important;filter:none!important;object-fit:cover!important}
 .pre-stage .pre-v{height:100%;width:auto}
 @media (min-width:760px){.pre-logo{width:110px;height:110px}.pre-word{font-size:40px}}
+/* v42: «Формула ATINE» on phones — vertical card that shows the whole helix */
+@media (max-width:860px){.dna{min-height:0!important;height:auto!important;aspect-ratio:3/4}}
