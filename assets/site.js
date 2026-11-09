@@ -243,9 +243,9 @@ function startIntro(){if(!reduce&&$('.hero,.hero2')){document.body.classList.add
 var pre=$('#pre');
 if(pre){var t0=Date.now(),gone=false;
   var hide=function(){if(gone)return;gone=true;pre.classList.add('done');document.documentElement.classList.remove('pre-on');startIntro();setTimeout(function(){pre.remove();},900);};
-  var MIN=reduce?300:5900,go=function(){setTimeout(hide,Math.max(0,MIN-performance.now()));};
+  var MIN=reduce?300:3700,go=function(){setTimeout(hide,Math.max(0,MIN-performance.now()));};
   if(document.readyState==='complete')go();else addEventListener('load',go);
-  setTimeout(hide,10000);
+  setTimeout(hide,8000);
 }else startIntro();
 if(reduce||!('IntersectionObserver'in window))return;
 var below=function(el){return el.getBoundingClientRect().top>innerHeight*.92;};
@@ -322,7 +322,7 @@ els.forEach(function(el){io.observe(el);});
   if(v&&v.tagName==='VIDEO'){v.addEventListener('canplay',function(){var p=v.play();if(p&&p.catch)p.catch(function(){});});}
   (function step(){
     if(!document.getElementById('pre'))return;
-    var byTime=Math.min(1,(performance.now()-t0)/5400);
+    var byTime=Math.min(1,(performance.now()-t0)/3500);
     var byVideo=(v&&v.duration&&!v.paused)?Math.min(1,v.currentTime/v.duration):0;
     var target=Math.max(byVideo,byTime*.85);if(byVideo>=.999||byTime>=1)target=Math.max(target,byTime);if(!loaded)target=Math.min(target,.9);
     shown+=(target-shown)*.15;if(target>=1&&shown>.995)shown=1;

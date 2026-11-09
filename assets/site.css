@@ -1691,3 +1691,9 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 /* v45b: header and first-screen logos never wait for an entrance animation */
 .hero-logo,.intro .hero-logo,.logo,.logo i,.hero-logo .em-wrap{opacity:1!important;visibility:visible!important}
 .intro .hero-logo{animation:none!important}
+
+/* ===== v46: HD video loader (~3.5 s), logo with baked-in glow — no CSS filters anywhere on logos ===== */
+.pre-logo{width:180px!important;height:180px!important;margin:-28px 0 -34px!important;filter:none!important}
+.logo i,.logo i img,.hero-logo i,.hero-logo .em-wrap i,.hero-logo .em-wrap i img{filter:none!important}
+@media (max-width:759px){.pre-logo{width:164px!important;height:164px!important}}
+@media (min-width:760px){.pre-bg{filter:blur(36px) saturate(1.45) brightness(.92)!important}}
