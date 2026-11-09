@@ -1601,3 +1601,48 @@ body{background:#FFFFFF}
 .pre-in .bar{display:none}
 .pre-pct{font:500 16px/1 var(--f);letter-spacing:.22em;color:#F3DFA8;margin-top:12px;font-variant-numeric:tabular-nums;text-shadow:0 0 12px rgba(230,190,116,.6)}
 @media (min-width:760px){.pre-v{object-fit:contain;opacity:.95}}
+/* ===== v38: loader — vivid video, solid gold logo that renders everywhere (incl. iOS Safari) ===== */
+.pre-v{opacity:1!important;filter:saturate(1.35) contrast(1.08) brightness(1.06)}
+.pre::before{background:radial-gradient(38% 30% at 50% 50%,rgba(1,40,48,.62),rgba(1,40,48,0) 75%),radial-gradient(120% 90% at 50% 50%,rgba(0,0,0,0) 55%,rgba(1,30,36,.55) 100%)!important}
+.pre-in{background:none!important;padding:0!important}
+.pre-logo{animation:preLogo 1.2s cubic-bezier(.2,.8,.2,1) both,preGlowLogo 2.6s ease-in-out 1.2s infinite}
+@keyframes preLogo{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+@keyframes preGlowLogo{0%,100%{filter:drop-shadow(0 0 16px rgba(240,200,110,.7)) drop-shadow(0 0 36px rgba(240,200,110,.3))}50%{filter:drop-shadow(0 0 26px rgba(255,215,130,.95)) drop-shadow(0 0 60px rgba(240,200,110,.5))}}
+.pre-word{animation:preWord 1.2s .25s cubic-bezier(.2,.8,.2,1) both}
+@keyframes preWord{from{opacity:0;letter-spacing:.6em}to{opacity:1;letter-spacing:.3em}}
+.pre-pct{font-size:17px!important;color:#FFE9B8!important}
+@media (max-width:760px){.pre-logo{width:112px;height:112px}.pre-word{font-size:36px}}
+
+/* ===== v38: premium pass — richer colour, gold metal accents, depth ===== */
+:root{--gold-1:#F6E3A8;--gold-2:#E2B85C;--gold-3:#B8862F;--gold-4:#8F6421;--teal-deep:#01434D;--teal-rich:#027A80;--tiff:#0CB7B0}
+/* photos: a touch more colour and contrast */
+main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna img,.st img,.vid img{filter:saturate(1.14) contrast(1.05)}
+.hero2 video,.hero2 .poster{filter:saturate(1.18) contrast(1.06)}
+/* gold metallic accent words on light backgrounds */
+@supports (-webkit-background-clip:text){
+  .sh h2 em,.sec:not(.navy) h2 em,.statement span{background:linear-gradient(100deg,var(--gold-3) 0%,var(--gold-2) 35%,#C99A3E 55%,var(--gold-4) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--gold-3)!important}
+  .hero2 h1 em,.sec.navy h2 em,.pban.drk h1 em,.cta-band.drk h2 em,.ft em{background:linear-gradient(100deg,var(--gold-1) 0%,var(--gold-2) 45%,#F3D58C 70%,var(--gold-2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+}
+/* section label: gold hairline */
+.sh .lbl{letter-spacing:.16em}
+.sh .lbl::after{content:"";display:inline-block;vertical-align:middle;width:46px;height:1px;margin-left:12px;background:linear-gradient(90deg,var(--gold-2),rgba(226,184,92,0))}
+/* cards: ivory-white, gold hairline, soft teal depth */
+.card,.nws,.ex .card,.rev,.who,.mono,.f,.need3 .card{border:1px solid rgba(214,175,87,.28)!important;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 18px 40px -22px rgba(1,67,77,.28)}
+.card:hover,.nws:hover{box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 26px 50px -20px rgba(1,67,77,.38);border-color:rgba(214,175,87,.55)!important}
+/* soft sections: warm ivory with faint Tiffany and gold glow */
+.sec.soft{background:radial-gradient(60% 50% at 8% 0%,rgba(12,183,176,.08),transparent 70%),radial-gradient(50% 45% at 100% 100%,rgba(226,184,92,.10),transparent 70%),var(--soft)}
+/* dark sections: deeper, richer teal with gold bokeh */
+.sec.navy,.drs,.cmp,.cta-band.drk,.pban.drk .box,.pdb.drk,.msw-panel,.ft .box{background:radial-gradient(70% 60% at 85% 10%,rgba(12,183,176,.38),transparent 60%),radial-gradient(40% 40% at 10% 90%,rgba(226,184,92,.16),transparent 65%),linear-gradient(150deg,#027A80 0%,#01606A 45%,#013A44 100%)!important}
+/* buttons: gold metal and deep teal with gold edge */
+.pill-sage,.sec.navy .pill-dark,.hero2 .pill-sage{background:linear-gradient(135deg,var(--gold-1) 0%,var(--gold-2) 45%,var(--gold-3) 100%)!important;color:#022F35!important;border:1px solid rgba(255,240,200,.6)!important;box-shadow:0 8px 22px -10px rgba(184,134,47,.7),inset 0 1px 0 rgba(255,255,255,.6)}
+.pill-sage:hover,.sec.navy .pill-dark:hover{filter:brightness(1.06)}
+.pill-dark{background:linear-gradient(135deg,#027A80,#01434D)!important;border:1px solid rgba(226,184,92,.45)!important;box-shadow:0 10px 24px -12px rgba(1,67,77,.7)}
+.pill-dark:hover{border-color:var(--gold-2)!important}
+/* big numbers: gold metal */
+@supports (-webkit-background-clip:text){.facts b,.dna .cap b,.big2,.stat b{background:linear-gradient(180deg,#F6E3A8,#D4AF57 55%,#A97A2B);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}}
+/* thin gold rule under the header */
+.hdr,header.hd,header{box-shadow:0 1px 0 rgba(214,175,87,.25)}
+/* v38 fixes: dark halo behind the loader logo; hero accent stays solid gold */
+.pre-in::before{content:"";position:absolute;left:50%;top:50%;width:340px;height:340px;transform:translate(-50%,-50%);z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(1,38,46,.88) 0%,rgba(1,38,46,.7) 45%,rgba(1,38,46,0) 100%)}
+@media (max-width:760px){.pre-in::before{width:300px;height:300px}}
+.hero2 h1 em{background:none!important;-webkit-text-fill-color:currentColor!important;color:#F0C66E!important;text-shadow:0 0 22px rgba(240,198,110,.35)}
