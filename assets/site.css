@@ -1658,3 +1658,10 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 .pre::before{z-index:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
 .pre-in{z-index:5!important;-webkit-transform:translate3d(0,0,1px);transform:translate3d(0,0,1px);will-change:transform}
 .pre-logo{position:relative;z-index:6}
+
+/* ===== v41: loader without overlays — stacked logo / video / progress ===== */
+.pre::before,.pre-in::before{display:none!important}
+.pre-in{position:static!important;transform:none!important;background:none!important;padding:0!important;z-index:auto!important}
+.pre-v{position:static!important;inset:auto!important;transform:none!important;opacity:1!important;filter:none!important;object-fit:cover!important}
+.pre-stage .pre-v{height:100%;width:auto}
+@media (min-width:760px){.pre-logo{width:110px;height:110px}.pre-word{font-size:40px}}

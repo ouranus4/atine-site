@@ -312,11 +312,10 @@ els.forEach(function(el){io.observe(el);});
   v.addEventListener('canplay',function(){var p=v.play();if(p&&p.catch)p.catch(function(){})});
 })();
 
-/* v37: loading progress follows the golden light climbing the DNA in the loader video */
+/* v41: loader — logo above, DNA video in the middle, progress below (nothing is layered over the video) */
 (function(){
   var pre=document.getElementById('pre');if(!pre)return;
-  var v=pre.querySelector('.pre-v'),inn=pre.querySelector('.pre-in');
-  var pct=document.createElement('span');pct.className='pre-pct';pct.textContent='0%';if(inn)inn.appendChild(pct);
+  var v=pre.querySelector('.pre-v'),pct=pre.querySelector('.pre-pct'),bar=pre.querySelector('.pre-bar em');
   var loaded=document.readyState==='complete';addEventListener('load',function(){loaded=true;});
   var t0=performance.now(),shown=0;
   if(v){v.addEventListener('canplay',function(){var p=v.play();if(p&&p.catch)p.catch(function(){});});}
@@ -324,9 +323,9 @@ els.forEach(function(el){io.observe(el);});
     if(!document.getElementById('pre'))return;
     var byTime=Math.min(1,(performance.now()-t0)/5400);
     var byVideo=(v&&v.duration&&!v.paused)?Math.min(1,v.currentTime/v.duration):0;
-    var target=Math.max(byVideo,byTime*.85);if(byVideo>=.999)target=1;if(!loaded)target=Math.min(target,.9);
+    var target=Math.max(byVideo,byTime*.85);if(byVideo>=.999||byTime>=1)target=Math.max(target,byTime);if(!loaded)target=Math.min(target,.9);
     shown+=(target-shown)*.15;if(target>=1&&shown>.995)shown=1;
-    pct.textContent=Math.round(shown*100)+'%';
+    if(pct)pct.textContent=Math.round(shown*100)+'%';if(bar)bar.style.width=(shown*100).toFixed(1)+'%';
     requestAnimationFrame(step);
   })();
 })();
