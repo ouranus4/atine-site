@@ -302,3 +302,11 @@ els.forEach(function(el){io.observe(el);});
     }
   }
 })();
+/* v34: reveal the DNA video only when frames are really playing */
+(function(){
+  var v=document.querySelector('.dna .dna-v');if(!v)return;
+  var on=function(){v.classList.add('on')};
+  if(!v.paused&&v.readyState>2)on();
+  v.addEventListener('playing',on);
+  v.addEventListener('canplay',function(){var p=v.play();if(p&&p.catch)p.catch(function(){})});
+})();

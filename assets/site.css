@@ -1580,3 +1580,7 @@ body{background:#FFFFFF}
 @media (max-width:760px){.leafs{-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 30%,rgba(0,0,0,.2) 55%);mask-image:linear-gradient(180deg,#000 0%,#000 30%,rgba(0,0,0,.2) 55%)}}
 /* v33: animated DNA (Google Flow) in the «Формула ATINE» card */
 .dna .dna-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+/* v34: DNA card shows the still frame at once, the video fades in once it actually plays */
+.dna .dna-p{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;animation:none}
+.dna .dna-v{opacity:0;transition:opacity .9s ease}
+.dna .dna-v.on{opacity:1}
