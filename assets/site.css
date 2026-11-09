@@ -1528,3 +1528,33 @@ img[src*="pat_wide"],img[src*="doc_wide"]{object-position:50% 30%!important}
 /* картинки: уводим зелёный оттенок в глубокий мятно-бирюзовый */
 .pban .ph img,.dna img,.who-ph img,.pdb .ph img,.st img{filter:hue-rotate(7deg) saturate(1.18) contrast(1.06)}
 .who-ph{background:#013F49}
+
+/* ===== v28: точные цвета брендбука, баннеры без стыков, детали с образца ===== */
+:root{
+  --gold:#D4AF57; --ivory:#F8F5F0; --soft:#F8F5F0; --sky:#0CB7B0; --sage:#DDF3F1; --taupe:#C7B3A7; --line:#E6DCD3;
+  --satin:
+    radial-gradient(circle at 81% 21%,rgba(232,200,120,.75) 0,rgba(232,200,120,0) 9px),
+    radial-gradient(circle at 92% 38%,rgba(232,200,120,.45) 0,rgba(232,200,120,0) 16px),
+    radial-gradient(circle at 74% 12%,rgba(191,233,230,.55) 0,rgba(191,233,230,0) 12px),
+    radial-gradient(circle at 66% 78%,rgba(232,200,120,.3) 0,rgba(232,200,120,0) 22px),
+    radial-gradient(circle at 96% 84%,rgba(191,233,230,.4) 0,rgba(191,233,230,0) 28px),
+    radial-gradient(55% 80% at 90% 15%,rgba(12,183,176,.62) 0%,rgba(12,183,176,0) 62%),
+    linear-gradient(118deg,rgba(255,255,255,0) 40%,rgba(191,233,230,.2) 52%,rgba(255,255,255,0) 63%),
+    linear-gradient(118deg,rgba(255,255,255,0) 62%,rgba(12,183,176,.16) 70%,rgba(255,255,255,0) 79%),
+    radial-gradient(70% 95% at 8% 110%,rgba(12,183,176,.42) 0%,rgba(12,183,176,0) 66%),
+    linear-gradient(135deg,#012A33 0%,#013F49 36%,#035A64 68%,#0A747A 100%);
+}
+body{background:#FFFFFF}
+.pill-sage{background:linear-gradient(135deg,#EBCF86 0%,#D4AF57 50%,#B8913A 100%);color:#012A33}
+.pill-sage:hover{background:linear-gradient(135deg,#D4AF57,#A9822F)}
+.pill-line{border-color:var(--taupe)}
+.cta-band,.mission .card:first-child,.done,.pban.sage .box,.eco .br.w1{background:radial-gradient(70% 120% at 90% 0%,#BFE9E6 0%,rgba(191,233,230,0) 60%),linear-gradient(120deg,#E8F7F5 0%,#F8F5F0 70%)}
+/* баннеры: фото растворяется в атласе — без видимого шва */
+.pban.has-ph .ph{width:62%}
+.pban.drk .ph::before,.pban.ivory .ph::before{display:none}
+.pban.has-ph .ph img,.pban.has-ph .ph video{-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 22%,#000 48%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 22%,#000 48%)}
+@media (max-width:860px){.pban.has-ph .ph{width:auto}.pban.has-ph .ph img,.pban.has-ph .ph video{-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 35%);mask-image:linear-gradient(180deg,transparent 0%,#000 35%)}}
+/* детали с образца: золотые иконки в кольце, золотая вертикальная линия у описания */
+.sh .lbl .li{background:transparent;border:1px solid var(--gold);color:#A9822F}
+.sec.navy .sh .lbl .li,.pban.drk .lbl .li{background:transparent;border-color:var(--gold);color:var(--gold)}
+@media (min-width:861px){.sh p{border-left:1px solid rgba(212,175,87,.75);padding-left:28px}}
