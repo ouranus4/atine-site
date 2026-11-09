@@ -278,3 +278,27 @@ document.documentElement.classList.add('bdraw');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('drawn');io.unobserve(e.target);}});},{threshold:.15});
 els.forEach(function(el){io.observe(el);});
 })();
+/* v30: animated leaves on the hero and sparkles on the DNA card */
+(function(){
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var LEAF='<svg viewBox="0 0 60 100" aria-hidden="true"><path d="M30 98C12 74 4 52 8 32 12 14 22 4 30 2c8 2 18 12 22 30 4 20-4 42-22 66z" fill="rgba(236,250,247,.28)" stroke="rgba(230,190,116,.85)" stroke-width="1.4"/><path d="M30 96V6M30 30 17 20M30 30l13-10M30 48 14 36M30 48l16-12M30 66 16 56M30 66l14-10M30 82 21 75M30 82l9-7" fill="none" stroke="#E6BE74" stroke-width="1.1" stroke-linecap="round"/></svg>';
+  var hero=document.querySelector('.hero2');
+  if(hero){
+    var box=document.createElement('div');box.className='leafs';box.setAttribute('aria-hidden','true');
+    var n=innerWidth<760?6:11,h='';
+    for(var i=0;i<n;i++){
+      var s=(22+Math.random()*44)|0,d=(14+Math.random()*12).toFixed(1),dl=(-Math.random()*d).toFixed(1);
+      h+='<i style="--y:'+(4+Math.random()*78).toFixed(1)+'%;--s:'+s+'px;--d:'+d+'s;--dl:'+dl+'s;--o:'+(0.55+Math.random()*.4).toFixed(2)+';--dy:'+((Math.random()*260)-60|0)+'px;--r:'+((Math.random()*540)-270|0)+'deg">'+LEAF+'</i>';
+    }
+    box.innerHTML=h;hero.appendChild(box);
+  }
+  var dna=document.querySelector('.dna');
+  if(dna){
+    var sh=document.createElement('span');sh.className='shine';dna.appendChild(sh);
+    for(var k=0;k<14;k++){
+      var p=document.createElement('span');p.className='spk';
+      p.style.cssText='left:'+(12+Math.random()*76).toFixed(1)+'%;top:'+(6+Math.random()*62).toFixed(1)+'%;--s:'+(4+Math.random()*7|0)+'px;--d:'+(3+Math.random()*4).toFixed(1)+'s;--dl:'+(-Math.random()*6).toFixed(1)+'s';
+      dna.appendChild(p);
+    }
+  }
+})();

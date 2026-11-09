@@ -1561,3 +1561,20 @@ body{background:#FFFFFF}
 /* v29: Google Flow series — keep subjects (placed right) inside the banner crop */
 .pban .ph img[src*="bn_"]{object-position:68% 35%}
 .who-ph img[src*="w_"]{object-position:62% 30%}
+/* v30: animated golden-vein leaves on the hero, living DNA card */
+.leafs{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.leafs i{position:absolute;left:100%;top:var(--y);width:var(--s);opacity:0;will-change:transform,opacity;animation:lfFly var(--d) linear var(--dl) infinite}
+.leafs i svg{display:block;width:100%;height:auto;filter:drop-shadow(0 0 6px rgba(230,190,116,.35));animation:lfSway calc(var(--d) / 5) ease-in-out infinite alternate}
+@keyframes lfFly{0%{transform:translate3d(0,0,0) rotate(0deg);opacity:0}8%{opacity:var(--o)}88%{opacity:var(--o)}100%{transform:translate3d(calc(-100vw - 160px),var(--dy),0) rotate(var(--r));opacity:0}}
+@keyframes lfSway{from{transform:rotate(-14deg) translateY(-6px) scaleX(1)}to{transform:rotate(16deg) translateY(8px) scaleX(.82)}}
+.dna{isolation:isolate}
+.dna img{animation:dnaBreath 16s ease-in-out infinite alternate;transform-origin:50% 60%}
+@keyframes dnaBreath{from{transform:scale(1) translateY(0)}to{transform:scale(1.07) translateY(-2%)}}
+.dna .shine{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,236,190,.22) 48%,rgba(255,255,255,.08) 52%,transparent 62%);background-size:250% 100%;animation:dnaShine 7s ease-in-out infinite}
+@keyframes dnaShine{0%,35%{background-position:130% 0}75%,100%{background-position:-60% 0}}
+.dna .spk{position:absolute;z-index:0;pointer-events:none;width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle,#FFF4D6 0%,#E6BE74 45%,rgba(230,190,116,0) 72%);opacity:0;animation:spk var(--d) ease-in-out var(--dl) infinite}
+@keyframes spk{0%,100%{opacity:0;transform:translateY(0) scale(.4)}50%{opacity:.95;transform:translateY(-18px) scale(1)}}
+.dna .lbl,.dna .cap{z-index:2}
+@media (prefers-reduced-motion:reduce){.leafs,.dna .shine,.dna .spk{display:none}.dna img{animation:none}}
+.leafs{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.25) 38%,#000 62%);mask-image:linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.25) 38%,#000 62%)}
+@media (max-width:760px){.leafs{-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 30%,rgba(0,0,0,.2) 55%);mask-image:linear-gradient(180deg,#000 0%,#000 30%,rgba(0,0,0,.2) 55%)}}
