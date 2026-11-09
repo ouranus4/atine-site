@@ -1646,3 +1646,10 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 .pre-in::before{content:"";position:absolute;left:50%;top:50%;width:340px;height:340px;transform:translate(-50%,-50%);z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(1,38,46,.88) 0%,rgba(1,38,46,.7) 45%,rgba(1,38,46,0) 100%)}
 @media (max-width:760px){.pre-in::before{width:300px;height:300px}}
 .hero2 h1 em{background:none!important;-webkit-text-fill-color:currentColor!important;color:#F0C66E!important;text-shadow:0 0 22px rgba(240,198,110,.35)}
+/* ===== v39: bullet-proof logos on iOS — real <img> emblem, solid gold wordmark ===== */
+.logo i,.hero-logo .em-wrap i{background:none!important;flex:none}
+.logo i img,.hero-logo .em-wrap i img{display:block;width:100%;height:100%;object-fit:contain}
+.logo b{background:none!important;-webkit-text-fill-color:currentColor!important;color:#8E6420!important}
+.hero-logo b{background:none!important;-webkit-text-fill-color:currentColor!important;color:#F0CD7E!important;text-shadow:0 0 14px rgba(240,200,110,.45)}
+.hd.open .logo-m b{color:#8E6420!important}
+.hero-logo small{color:#F3DFA8}
