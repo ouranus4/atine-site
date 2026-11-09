@@ -1584,3 +1584,9 @@ body{background:#FFFFFF}
 .dna .dna-p{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;animation:none}
 .dna .dna-v{opacity:0;transition:opacity .9s ease}
 .dna .dna-v.on{opacity:1}
+/* v35: loading screen on every visit — rotating pearl DNA behind the ATINE logo */
+.pre{overflow:hidden;background:#01343E}
+.pre-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:.55}
+.pre::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(60% 55% at 50% 50%,rgba(1,52,62,.55),rgba(1,52,62,.88) 100%)}
+.pre-in{position:relative;z-index:2}
+@media (min-width:900px){.pre-v{object-fit:contain;opacity:.7}}
