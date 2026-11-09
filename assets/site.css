@@ -1578,3 +1578,5 @@ body{background:#FFFFFF}
 @media (prefers-reduced-motion:reduce){.leafs,.dna .shine,.dna .spk{display:none}.dna img{animation:none}}
 .leafs{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.25) 38%,#000 62%);mask-image:linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.25) 38%,#000 62%)}
 @media (max-width:760px){.leafs{-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 30%,rgba(0,0,0,.2) 55%);mask-image:linear-gradient(180deg,#000 0%,#000 30%,rgba(0,0,0,.2) 55%)}}
+/* v33: animated DNA (Google Flow) in the «Формула ATINE» card */
+.dna .dna-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
