@@ -1578,10 +1578,3 @@ body{background:#FFFFFF}
 @media (prefers-reduced-motion:reduce){.leafs,.dna .shine,.dna .spk{display:none}.dna img{animation:none}}
 .leafs{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.25) 38%,#000 62%);mask-image:linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.25) 38%,#000 62%)}
 @media (max-width:760px){.leafs{-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 30%,rgba(0,0,0,.2) 55%);mask-image:linear-gradient(180deg,#000 0%,#000 30%,rgba(0,0,0,.2) 55%)}}
-/* v31: floating glowing cell on the hero */
-.hero-cell{position:absolute;z-index:-1;left:47%;top:9%;width:clamp(130px,14vw,230px);height:auto;pointer-events:none;mix-blend-mode:screen;filter:drop-shadow(0 0 24px rgba(230,190,116,.45));animation:cellFloat 12s ease-in-out infinite alternate,cellGlow 4.5s ease-in-out infinite}
-@keyframes cellFloat{0%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}50%{transform:translate3d(-14px,18px,0) rotate(8deg) scale(1.04)}100%{transform:translate3d(10px,-12px,0) rotate(-6deg) scale(.98)}}
-@keyframes cellGlow{0%,100%{opacity:.82}50%{opacity:1}}
-@media (max-width:760px){.hero-cell{left:auto;right:6%;top:6%;width:96px}}
-@media (prefers-reduced-motion:reduce){.hero-cell{animation:none}}
-.hero-cell{mix-blend-mode:normal;opacity:.95}
