@@ -243,9 +243,9 @@ function startIntro(){if(!reduce&&$('.hero,.hero2')){document.body.classList.add
 var pre=$('#pre');
 if(pre){var t0=Date.now(),gone=false;
   var hide=function(){if(gone)return;gone=true;pre.classList.add('done');document.documentElement.classList.remove('pre-on');startIntro();setTimeout(function(){pre.remove();},900);};
-  var MIN=reduce?300:4600,go=function(){setTimeout(hide,Math.max(0,MIN-performance.now()));};
+  var MIN=reduce?300:5700,go=function(){setTimeout(hide,Math.max(0,MIN-performance.now()));};
   if(document.readyState==='complete')go();else addEventListener('load',go);
-  setTimeout(hide,9000);
+  setTimeout(hide,10000);
 }else startIntro();
 if(reduce||!('IntersectionObserver'in window))return;
 var below=function(el){return el.getBoundingClientRect().top>innerHeight*.92;};
@@ -312,29 +312,20 @@ els.forEach(function(el){io.observe(el);});
   v.addEventListener('canplay',function(){var p=v.play();if(p&&p.catch)p.catch(function(){})});
 })();
 
-/* v36: loading progress — a golden line climbs the DNA helix to 100% */
+/* v37: loading progress follows the golden light climbing the DNA in the loader video */
 (function(){
   var pre=document.getElementById('pre');if(!pre)return;
-  var NS='http://www.w3.org/2000/svg',H=1000,W=240,turns=3.2,amp=78,n=160,a='',b='';
-  for(var i=0;i<=n;i++){var y=H-i*H/n,t=i/n*turns*2*Math.PI;a+=(i?'L':'M')+(W/2+Math.sin(t)*amp).toFixed(1)+' '+y.toFixed(1);b+=(i?'L':'M')+(W/2-Math.sin(t)*amp).toFixed(1)+' '+y.toFixed(1);}
-  var rungs='';for(var k=1;k<26;k++){var yy=H-k*H/26,tt=k/26*turns*2*Math.PI,x1=W/2+Math.sin(tt)*amp,x2=W/2-Math.sin(tt)*amp;rungs+='M'+x1.toFixed(1)+' '+yy.toFixed(1)+'L'+x2.toFixed(1)+' '+yy.toFixed(1);}
-  var box=document.createElement('div');box.className='pre-dna';
-  box.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><defs><filter id="pglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>'+
-    '<path class="pd-base" d="'+a+'"/><path class="pd-base" d="'+b+'"/><path class="pd-rung" d="'+rungs+'" pathLength="1"/>'+
-    '<path class="pd-gold" d="'+a+'" pathLength="1" filter="url(#pglow)"/><path class="pd-gold" d="'+b+'" pathLength="1" filter="url(#pglow)"/>'+
-    '<circle class="pd-head" r="7" filter="url(#pglow)"/><circle class="pd-head" r="7" filter="url(#pglow)"/></svg>';
-  pre.insertBefore(box,pre.querySelector('.pre-in'));
-  var pct=document.createElement('span');pct.className='pre-pct';pct.textContent='0%';
-  var inn=pre.querySelector('.pre-in');if(inn)inn.appendChild(pct);
-  var golds=box.querySelectorAll('.pd-gold'),heads=box.querySelectorAll('.pd-head'),rung=box.querySelector('.pd-rung');
+  var v=pre.querySelector('.pre-v'),inn=pre.querySelector('.pre-in');
+  var pct=document.createElement('span');pct.className='pre-pct';pct.textContent='0%';if(inn)inn.appendChild(pct);
   var loaded=document.readyState==='complete';addEventListener('load',function(){loaded=true;});
-  var DUR=4300,shown=0;
+  var t0=performance.now(),shown=0;
+  if(v){v.addEventListener('canplay',function(){var p=v.play();if(p&&p.catch)p.catch(function(){});});}
   (function step(){
     if(!document.getElementById('pre'))return;
-    var target=Math.min(1,performance.now()/DUR);if(!loaded)target=Math.min(target,.9);
-    shown+=(target-shown)*.12;if(target>=1&&shown>.995)shown=1;
-    for(var j=0;j<2;j++){golds[j].style.strokeDashoffset=(1-shown).toFixed(4);var L=golds[j].getTotalLength(),p=golds[j].getPointAtLength(L*shown);heads[j].setAttribute('cx',p.x);heads[j].setAttribute('cy',p.y);}
-    rung.style.strokeDashoffset=(1-shown).toFixed(4);
+    var byTime=Math.min(1,(performance.now()-t0)/5400);
+    var byVideo=(v&&v.duration&&!v.paused)?Math.min(1,v.currentTime/v.duration):0;
+    var target=Math.max(byVideo,byTime*.85);if(byVideo>=.999)target=1;if(!loaded)target=Math.min(target,.9);
+    shown+=(target-shown)*.15;if(target>=1&&shown>.995)shown=1;
     pct.textContent=Math.round(shown*100)+'%';
     requestAnimationFrame(step);
   })();

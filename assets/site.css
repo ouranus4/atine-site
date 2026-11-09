@@ -1590,13 +1590,14 @@ body{background:#FFFFFF}
 .pre::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(60% 55% at 50% 50%,rgba(1,52,62,.55),rgba(1,52,62,.88) 100%)}
 .pre-in{position:relative;z-index:2}
 @media (min-width:900px){.pre-v{object-fit:contain;opacity:.7}}
-/* v36: golden progress line along the DNA helix + percent */
-.pre-dna{position:absolute;inset:0;z-index:1;display:flex;justify-content:center;pointer-events:none}
-.pre-dna svg{height:100%;width:auto;max-width:42vw;overflow:visible}
-.pd-base{fill:none;stroke:rgba(216,168,84,.16);stroke-width:2}
-.pd-rung{fill:none;stroke:rgba(230,190,116,.45);stroke-width:1.2;stroke-dasharray:1 1;stroke-dashoffset:1}
-.pd-gold{fill:none;stroke:#E6BE74;stroke-width:3;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:1}
-.pd-head{fill:#FFF1CC}
+/* v37: loader video carries the golden line; logo larger and clear */
+.pre-v{opacity:.9}
+@media (min-width:900px){.pre-v{object-fit:cover;opacity:.85}}
+.pre::before{background:radial-gradient(42% 34% at 50% 50%,rgba(1,52,62,.78),rgba(1,52,62,.25) 70%,rgba(1,52,62,.55) 100%)}
+.pre-in{padding:30px 40px;border-radius:50%;background:radial-gradient(closest-side,rgba(1,40,48,.85),rgba(1,40,48,0))}
+.pre-in i{width:124px;height:124px}
+.pre-in b{font-size:42px}
+.pre-in small{font-size:12px}
 .pre-in .bar{display:none}
-.pre-pct{font:500 15px/1 var(--f);letter-spacing:.22em;color:#F3DFA8;margin-top:10px;font-variant-numeric:tabular-nums;text-shadow:0 0 12px rgba(230,190,116,.6)}
-.pre-in{padding:22px 30px;border-radius:24px;background:radial-gradient(closest-side,rgba(1,52,62,.75),rgba(1,52,62,0))}
+.pre-pct{font:500 16px/1 var(--f);letter-spacing:.22em;color:#F3DFA8;margin-top:12px;font-variant-numeric:tabular-nums;text-shadow:0 0 12px rgba(230,190,116,.6)}
+@media (min-width:760px){.pre-v{object-fit:contain;opacity:.95}}
