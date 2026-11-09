@@ -1558,3 +1558,6 @@ body{background:#FFFFFF}
 .sh .lbl .li{background:transparent;border:1px solid var(--gold);color:#A9822F}
 .sec.navy .sh .lbl .li,.pban.drk .lbl .li{background:transparent;border-color:var(--gold);color:var(--gold)}
 @media (min-width:861px){.sh p{border-left:1px solid rgba(212,175,87,.75);padding-left:28px}}
+/* v29: Google Flow series — keep subjects (placed right) inside the banner crop */
+.pban .ph img[src*="bn_"]{object-position:68% 35%}
+.who-ph img[src*="w_"]{object-position:62% 30%}
