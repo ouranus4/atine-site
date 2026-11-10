@@ -1719,3 +1719,20 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 .pill-sage,.sec.navy .pill-dark,.hero2 .pill-sage{color:#00444A!important}
 .cmp thead th:last-child{color:#F6DA92!important}
 .mission .card[style*="--dark"] em,.mission .card[style*="var(--dark)"] em{color:#F6DA92!important;-webkit-text-fill-color:#F6DA92!important}
+/* ===== v50: polished-gold metal on gold accents over Tiffany (like the brand-book wordmark), with a slow jewellery glint ===== */
+@supports (-webkit-background-clip:text) or (background-clip:text){
+  .sec.navy h2 em,.drs h2 em,.cmp h3 em,.cta-band.drk h2 em,.pban.drk h1 em,.pdb.drk em,.msw-panel em,.ft .big em,.hero2 h1 em,.dna .cap b{
+    background:linear-gradient(100deg,#C8963A 0%,#F3D98E 14%,#E2B456 28%,#A8752A 44%,#E6BE68 58%,#FFF0C4 66%,#E6BE68 74%,#B8862F 88%,#E9C774 100%)!important;
+    background-size:240% 100%!important;
+    -webkit-background-clip:text!important;background-clip:text!important;
+    -webkit-text-fill-color:transparent!important;color:#E9C774!important;
+    text-shadow:none!important;
+    filter:drop-shadow(0 1px 0 rgba(70,44,10,.35)) drop-shadow(0 0 14px rgba(246,214,140,.28));
+    animation:goldGlint 7s ease-in-out infinite;
+  }
+}
+@keyframes goldGlint{0%,40%{background-position:100% 0}80%,100%{background-position:0% 0}}
+/* gold buttons: a glint passes on hover */
+.pill-sage,.sec.navy .pill-dark{background-size:200% 100%!important;transition:background-position .9s ease,filter .3s}
+.pill-sage:hover,.sec.navy .pill-dark:hover{background-position:100% 0!important}
+@media (prefers-reduced-motion:reduce){.sec.navy h2 em,.drs h2 em,.cmp h3 em,.cta-band.drk h2 em,.pban.drk h1 em,.pdb.drk em,.msw-panel em,.hero2 h1 em,.dna .cap b{animation:none}}
