@@ -313,20 +313,3 @@ els.forEach(function(el){io.observe(el);});
 })();
 
 /* v47: static logo loader - no progress script */
-/* v49: golden glow layer for every Tiffany block */
-(function(){
-  var sel='.sec.navy,.drs,.cmp,.cta-band.drk,.pban.drk .box,.pdb.drk,.msw-panel,.ft .box,.dna';
-  var small=innerWidth<760;
-  document.querySelectorAll(sel).forEach(function(el){
-    if(el.querySelector(':scope>.gfx'))return;
-    if(getComputedStyle(el).position==='static')el.style.position='relative';
-    el.classList.add('gfx-host');
-    var box=document.createElement('span');box.className='gfx';box.setAttribute('aria-hidden','true');
-    var r=el.getBoundingClientRect(),area=Math.max(1,r.width*r.height/1e5),n=Math.round(Math.min(small?14:34,Math.max(9,area*2.4))),h='';
-    for(var k=0;k<n;k++){
-      var big=Math.random()<.28,s=big?(28+Math.random()*46):(4+Math.random()*10);
-      h+='<i class="'+(big?'b':'')+'" style="left:'+(Math.random()*100).toFixed(1)+'%;top:'+(Math.random()*100).toFixed(1)+'%;width:'+s.toFixed(0)+'px;height:'+s.toFixed(0)+'px;--d:'+(4+Math.random()*6).toFixed(1)+'s;--dl:'+(-Math.random()*8).toFixed(1)+'s;--o0:'+(big?.08:.15)+';--o1:'+(big?(.4+Math.random()*.25):(.75+Math.random()*.25)).toFixed(2)+';--dx:'+((Math.random()*40)-20|0)+'px;--dy:'+((Math.random()*-36)|0)+'px"></i>';
-    }
-    box.innerHTML=h;el.insertBefore(box,el.firstChild);
-  });
-})();
