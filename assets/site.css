@@ -1719,3 +1719,19 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 .pill-sage,.sec.navy .pill-dark,.hero2 .pill-sage{color:#00444A!important}
 .cmp thead th:last-child{color:#F6DA92!important}
 .mission .card[style*="--dark"] em,.mission .card[style*="var(--dark)"] em{color:#F6DA92!important;-webkit-text-fill-color:#F6DA92!important}
+/* ===== v49: golden glow inside the Tiffany — warm gold haze, twinkling bokeh, a slow gold sheen ===== */
+.gfx-host{isolation:isolate}
+.gfx{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;border-radius:inherit}
+.gfx::before{content:"";position:absolute;inset:0;background:radial-gradient(55% 45% at 88% 6%,rgba(255,214,130,.30),transparent 62%),radial-gradient(45% 40% at 4% 96%,rgba(255,200,110,.24),transparent 64%),radial-gradient(30% 26% at 55% 50%,rgba(255,226,160,.07),transparent 70%)}
+.gfx::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-60%;width:45%;transform:skewX(-18deg);background:linear-gradient(90deg,transparent,rgba(255,226,160,.16) 45%,rgba(255,244,214,.26) 50%,rgba(255,226,160,.16) 55%,transparent);mix-blend-mode:screen;animation:gfxSheen 9s ease-in-out infinite}
+@keyframes gfxSheen{0%,55%{left:-60%}85%,100%{left:130%}}
+.gfx i{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,240,200,.95) 0%,rgba(240,196,110,.55) 38%,rgba(230,180,90,0) 70%);mix-blend-mode:screen;opacity:.0;animation:gfxTw var(--d) ease-in-out var(--dl) infinite,gfxDrift calc(var(--d) * 2.2) ease-in-out var(--dl) infinite alternate}
+.gfx i.b{filter:blur(2px)}
+@keyframes gfxTw{0%,100%{opacity:var(--o0)}50%{opacity:var(--o1)}}
+@keyframes gfxDrift{from{transform:translate3d(0,0,0)}to{transform:translate3d(var(--dx),var(--dy),0)}}
+.sec.navy h2 em,.drs h2 em,.cmp h3 em,.cta-band.drk h2 em,.pban.drk h1 em,.pdb.drk em,.msw-panel em,.ft em,.hero2 h1 em{text-shadow:0 0 18px rgba(246,214,140,.55),0 0 42px rgba(246,214,140,.25)}
+@media (prefers-reduced-motion:reduce){.gfx::after{display:none}.gfx i{animation:none;opacity:var(--o1)}}
+/* v49b: stronger gold */
+.gfx::before{background:radial-gradient(55% 50% at 90% 4%,rgba(255,206,110,.48),transparent 62%),radial-gradient(48% 45% at 2% 98%,rgba(255,196,100,.40),transparent 64%),radial-gradient(35% 30% at 60% 55%,rgba(255,222,150,.12),transparent 70%)!important}
+.gfx::after{background:linear-gradient(90deg,transparent,rgba(255,222,150,.22) 44%,rgba(255,246,220,.38) 50%,rgba(255,222,150,.22) 56%,transparent)!important;animation-duration:7s!important}
+.gfx i{background:radial-gradient(circle,rgba(255,246,214,1) 0%,rgba(246,200,110,.75) 34%,rgba(230,180,90,0) 70%)!important}
