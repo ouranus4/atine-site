@@ -1697,3 +1697,8 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 .logo i,.logo i img,.hero-logo i,.hero-logo .em-wrap i,.hero-logo .em-wrap i img{filter:none!important}
 @media (max-width:759px){.pre-logo{width:164px!important;height:164px!important}}
 @media (min-width:760px){.pre-bg{filter:blur(36px) saturate(1.45) brightness(.92)!important}}
+
+/* ===== v47: calm static loader - teal glow, logo, wordmark; no video, no progress ===== */
+.pre{display:grid!important;place-items:center!important;background:radial-gradient(70% 60% at 50% 45%,#037078 0%,#01434D 55%,#012A31 100%)!important}
+.pre::before,.pre-in::before,.pre-in::after{display:none!important}
+.pre-in{position:static!important;margin:0!important;transform:none!important;background:none!important;padding:0!important}
