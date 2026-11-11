@@ -1865,3 +1865,27 @@ html body .mf-play::before{border-left-color:#0A7A80!important}
 .doc-chip span{display:flex;flex-direction:column;line-height:1.2}
 .doc-chip b{font:600 15px var(--f);letter-spacing:.02em;color:#fff}
 .doc-chip small{font-size:11.5px;color:#DDF2F2;margin-top:2px}
+/* v65: first block — sharp photo «Bombushkar + pearl DNA» instead of the video; lab behind the text on phones */
+.hero2 .hero-pic{display:contents}
+@media (min-width:861px){
+  .hero2{background:#03464C!important}
+  html body .hero2 .poster{left:0!important;right:0!important;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:70% 35%!important;-webkit-mask-image:none!important;mask-image:none!important}
+}
+@media (max-width:860px){
+  html body .hero2 .poster{position:relative!important;display:block!important;width:100%!important;height:68svh!important;min-height:440px;max-height:760px;object-fit:cover!important;object-position:50% 62%!important}
+  .hero2-in{background:linear-gradient(180deg,rgba(3,58,63,.92) 0%,rgba(3,58,63,.72) 30%,rgba(3,58,63,.78) 100%),url(img/lab_tall.jpg?v=65) center top/cover no-repeat}
+}
+.hero2 .sub{text-wrap:pretty}
+@media (max-width:860px){.hero2 .sub{font-size:15.5px!important;line-height:1.5!important;margin-top:16px!important}}
+@media (max-width:860px){html body .hero2 .poster{z-index:0!important}.hero2 .hero2-in{position:relative;z-index:1}.hero2::before{z-index:0!important;pointer-events:none}}
+@media (min-width:861px){
+  .hero2{background:#03464C url(img/lab_wide.jpg) left center/cover no-repeat!important}
+  html body .hero2 .poster{left:auto!important;right:0!important;width:76%!important;object-position:65% 35%!important;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 14%,#000 30%)!important;mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 14%,#000 30%)!important}
+  html body .hero2::before{background:linear-gradient(90deg,rgba(3,52,57,.92) 0%,rgba(3,52,57,.78) 32%,rgba(3,52,57,.25) 50%,rgba(3,52,57,0) 62%),linear-gradient(0deg,rgba(3,52,57,.55),transparent 25%)!important}
+}
+html body .hero2{isolation:isolate}
+html body .hero2 .poster{z-index:0!important}
+html body .hero2::before{z-index:1!important;pointer-events:none}
+html body .hero2 .hero2-in{position:relative;z-index:2}
+html body .hero2 .scroll{z-index:2}
