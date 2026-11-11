@@ -1938,3 +1938,5 @@ html body .dna .dna-v,html body .dna .dna-p,html body .dna .vfb{object-position:
   html body .hero2 .poster{left:0!important;right:0!important;width:100%!important;object-position:65% 40%!important;-webkit-mask-image:none!important;mask-image:none!important}
 }
 @media (max-width:860px){html body .hero2 .poster{object-position:50% 30%!important}}
+/* v72: phones — «Хто ви?» goes above the Formula card */
+@media (max-width:860px){html body .home3 .who{order:-1}}
