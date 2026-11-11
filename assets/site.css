@@ -1801,3 +1801,14 @@ html body .sec.navy .rd-col-next .rd-next span.rd-dot,html body .rd-next span.rd
 .mf-v .mf-play{left:auto!important;top:auto!important;right:22px!important;bottom:18px!important;margin:0!important;width:58px!important;height:58px!important}
 .mf-v .mf-play::before{left:22px!important;top:17px!important;border-left-width:16px!important;border-top-width:12px!important;border-bottom-width:12px!important}
 .mf-v .mf-cap{right:96px}
+/* v57: generated leaf backgrounds on teal plates (leaves only at the sides, barely visible) */
+.sec.navy,.ft .box,.cta-band.drk,.pdb.drk,.drs,.pban.drk .box{background:url(img/lv_16x9.jpg) center/cover no-repeat,var(--grad-alex)!important}
+.cmp,.msw-panel{background:url(img/lv_4x3.jpg) center/cover no-repeat,var(--grad-alex)!important}
+.sumbox,.card.dk,.calc-sum{background:url(img/lv_1x1.jpg) center/cover no-repeat,var(--grad-alex)!important}
+@media (max-width:760px){
+  .sec.navy,.ft .box,.cmp{background:url(img/lv_9x16.jpg) center/cover no-repeat,var(--grad-alex)!important}
+  .msw-panel,.cta-band.drk,.pdb.drk,.drs,.pban.drk .box{background:url(img/lv_1x1.jpg) center/cover no-repeat,var(--grad-alex)!important}
+}
+/* v57: monograph is now a photo */
+.book.book-img{height:auto;perspective:none;display:flex;justify-content:center}
+.book.book-img img{display:block;width:100%;max-width:420px;height:auto;border-radius:20px;box-shadow:0 24px 50px -28px rgba(3,70,76,.55)}
