@@ -1759,3 +1759,10 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 .sec.navy .rd-col:not(.rd-col-next) .rd-y{color:#9A6430!important}
 .rd-dot{background:#067A76!important}
 .nws-tag{color:#067A76!important}
+/* v53: white cards inside Tiffany sections ("Три прості аналогії" etc.) keep dark ink text */
+.sec.navy :is(.grid3,.grid4,.ptypes) .card :is(p,li,small,span,h3,h4,b),.sec.navy :is(.pub,.rev) :is(p,li,small,span,h3,h4,b,a){color:#0A2E35!important;text-shadow:none!important}
+.sec.navy :is(.grid3,.grid4,.ptypes) .card :is(p,li,small),.sec.navy :is(.pub,.rev) :is(p,li,small){color:#2F4C52!important}
+.sec.navy :is(.pub,.rev) :is(.mt,.na,footer span){color:#557178!important}
+.sec.navy .pill-line .ar,.sec.navy .pub .ft2 a .ar{color:#0A2E35!important}
+.sec.navy :is(.grid3,.grid4,.ptypes) .card .ico{color:#067A76!important;border-color:#D8A854!important}
+.pill-sage .ar{color:#067A76!important}

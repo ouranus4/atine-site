@@ -9,7 +9,7 @@
 <link rel="icon" href="../assets/img/gold.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap">
-<link rel="stylesheet" href="../assets/site.css?v=52">
+<link rel="stylesheet" href="../assets/site.css?v=53">
 </head>
 <body>
 <div class="pre" id="pre" aria-hidden="true"><div class="pre-in"><i></i><b><span>A</span><span>T</span><span>I</span><span>N</span><span>E</span></b><small>SCIENCE FOR LIFE</small><span class="bar"><em></em></span></div></div>
@@ -211,7 +211,12 @@
     card.classList.add('sw');clearTimeout(tm);
     tm=setTimeout(function(){var d=H[i];img.src=d.img;img.alt=d.n;no.textContent=CMP+String(i+1).padStart(2,'0')+' / 26';nm.textContent=d.n;lat.textContent=d.l;tx.textContent=d.t;meta(i);card.classList.remove('sw');},200);
   }
-  tabs.forEach(function(b,j){b.tabIndex=j===0?0:-1;b.addEventListener('click',function(){show(j);});
+  /* v53: on phones the card sits below the list — bring it into view after a tap */
+  function reveal(){var r=card.getBoundingClientRect(),ls=document.querySelector('.herb-list');
+    if(ls&&r.left>=ls.getBoundingClientRect().right-4)return; /* desktop: card is beside the list */
+    var hd=document.querySelector('.hd'),off=(hd?hd.offsetHeight:0)+12;
+    if(r.top<off||r.top>window.innerHeight*0.5){window.scrollTo({top:window.pageYOffset+r.top-off,behavior:'smooth'});}}
+  tabs.forEach(function(b,j){b.tabIndex=j===0?0:-1;b.addEventListener('click',function(){show(j);reveal();});
     b.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();show(cur+1,true);}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();show(cur-1,true);}});});
 
   /* reference data: family, part, key compound, groups, specialist notes */
