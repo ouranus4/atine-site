@@ -243,7 +243,7 @@ function startIntro(){if(!reduce&&$('.hero,.hero2')){document.body.classList.add
 var pre=$('#pre');
 if(pre){var t0=Date.now(),gone=false;
   var hide=function(){if(gone)return;gone=true;pre.classList.add('done');document.documentElement.classList.remove('pre-on');startIntro();setTimeout(function(){pre.remove();},900);};
-  var MIN=reduce?200:(+pre.getAttribute('data-min')||1300),go=function(){setTimeout(hide,Math.max(0,MIN-performance.now()));};
+  var MIN=reduce?200:1300,go=function(){setTimeout(hide,Math.max(0,MIN-performance.now()));};
   pre.addEventListener('click',hide);
   if(document.readyState==='complete')go();else addEventListener('load',go);
   setTimeout(hide,+pre.getAttribute('data-max')||4000);
