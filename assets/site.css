@@ -1932,3 +1932,9 @@ html body .pre .pre-in .pre-ld b{display:block!important;height:100%!important;w
 @media (prefers-reduced-motion:reduce){html body .pre .pre-in .pre-ld b{animation:none!important;width:100%}}
 /* v69: Formula card — DNA a bit lower */
 html body .dna .dna-v,html body .dna .dna-p,html body .dna .vfb{object-position:50% 0%!important;transform:translateY(6%) scale(1.22);transform-origin:50% 50%}
+/* v70: first block — woman in the mountains (photo) */
+@media (min-width:861px){
+  html body .hero2{background:#0A676B!important}
+  html body .hero2 .poster{left:0!important;right:0!important;width:100%!important;object-position:65% 40%!important;-webkit-mask-image:none!important;mask-image:none!important}
+}
+@media (max-width:860px){html body .hero2 .poster{object-position:50% 30%!important}}
