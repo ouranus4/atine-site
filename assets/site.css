@@ -1771,3 +1771,31 @@ main img:not([src$=".png"]):not([src$=".svg"]),.pban .ph img,.who-ph img,.dna im
 .sec.navy,.ft .box,.pban.drk .box,.cta-band.drk,.cmp,.drs,.msw-panel,.pdb.drk,.sumbox,.card.dk,.calc-sum{background:radial-gradient(70% 60% at 85% 8%,rgba(28,169,168,.45),rgba(0,0,0,0) 62%),radial-gradient(45% 45% at 8% 92%,rgba(216,168,84,.14),rgba(0,0,0,0) 65%),var(--grad-alex)!important}
 html body .pill-sage span.ar,html body .sec.navy .pill-sage span.ar{color:#0A7A80!important}
 html body .sec.navy a.pill-line,html body .sec.navy a.pill-line span{color:#0A2E35!important;text-shadow:none!important}
+/* v55: one centered gradient on every teal plate (light glow in the middle → deep edges), no gold/dirty blobs */
+:root{--grad-alex:radial-gradient(120% 95% at 50% 42%,#1CA9A8 0%,#14918F 32%,#0A7A80 58%,#0A676B 80%,#03464C 100%);
+  --pearl:radial-gradient(circle at 32% 28%,#E9FBFA 0%,#9FE0DC 18%,#2FAFAB 45%,#0A7A80 72%,#03464C 100%)}
+.sec.navy,.ft .box,.pban.drk .box,.cta-band.drk,.cmp,.drs,.msw-panel,.pdb.drk,.sumbox,.card.dk,.calc-sum{background:var(--grad-alex)!important}
+.sec.navy .sdeco,.cmp .sdeco{display:none!important}
+.sec.navy .rd-col-next{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.28)!important}
+/* pearl circles: light → dark, white glyphs */
+.msw-panel .track b,.msw-panel .track button>b{background:var(--pearl)!important;color:#fff!important;border:0!important;text-shadow:0 1px 2px rgba(3,70,76,.5);box-shadow:0 6px 14px -6px rgba(3,70,76,.7),inset 0 1px 1px rgba(255,255,255,.6)}
+.msw-panel .track li:not(.cur) button{color:#fff!important}
+.msw-panel .track li:not(.cur) button:not(:has(b)){background:var(--pearl);border-radius:50%;text-shadow:0 1px 2px rgba(3,70,76,.5);box-shadow:0 6px 14px -6px rgba(3,70,76,.7),inset 0 1px 1px rgba(255,255,255,.6)}
+.mprev,.mnext{background:var(--pearl)!important;border:0!important;color:#fff!important;box-shadow:0 6px 14px -6px rgba(3,70,76,.7),inset 0 1px 1px rgba(255,255,255,.6)}
+.msw-panel .mnav{border-top-color:rgba(255,255,255,.25)!important}
+.mf-play{background:var(--pearl)!important;box-shadow:0 0 0 10px rgba(255,255,255,.18),0 12px 30px -8px rgba(3,70,76,.8)!important}
+.mf-play::before{border-left-color:#fff!important}
+.rd-done .rd-dot{background:var(--pearl)!important;color:#fff!important;font-size:14px;text-shadow:0 1px 2px rgba(3,70,76,.6)}
+/* next steps: white dots, clear line */
+.rd-col-next ol::before{background:rgba(255,255,255,.75)!important;width:2px!important;left:14.5px!important}
+.rd-next .rd-dot{background:#fff!important;color:#0A7A80!important;border:0!important;box-shadow:0 0 0 4px rgba(255,255,255,.18)}
+/* floating leaves (as in the DNA video) */
+.lv-layer{position:absolute;inset:0;z-index:-1;overflow:hidden;border-radius:inherit;pointer-events:none}
+.lv-layer svg{position:absolute;width:var(--s);height:var(--s);left:var(--x);top:var(--y);opacity:var(--o);transform:rotate(var(--r));animation:lvf var(--d) ease-in-out var(--dl) infinite alternate;filter:drop-shadow(0 6px 10px rgba(3,40,44,.25))}
+@keyframes lvf{0%{transform:translate(0,0) rotate(var(--r))}50%{transform:translate(calc(var(--dx)*.5),-14px) rotate(calc(var(--r) + 8deg))}100%{transform:translate(var(--dx),6px) rotate(calc(var(--r) - 6deg))}}
+@media (prefers-reduced-motion:reduce){.lv-layer svg{animation:none}}
+/* v55: home hero now plays the Nauka DNA video */
+.hero2 video,.hero2 .poster,.hero2 .vfb{object-position:62% 50%!important}
+html body .sec.navy .rd-col .rd-done span.rd-dot,html body .rd-done span.rd-dot{color:#fff!important;font-weight:700}
+html body .msw-panel .track li.cur b{background:radial-gradient(circle at 32% 28%,#FFF6DC 0%,#F4D78F 30%,#D8A854 70%,#9A6430 100%)!important;color:#3A2A0E!important;text-shadow:none}
+html body .sec.navy .rd-col-next .rd-next span.rd-dot,html body .rd-next span.rd-dot{color:#0A7A80!important;text-shadow:none!important;font-weight:700}

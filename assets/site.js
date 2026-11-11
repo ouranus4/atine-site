@@ -313,3 +313,31 @@ els.forEach(function(el){io.observe(el);});
 })();
 
 /* v47: static logo loader - no progress script */
+
+/* v55: floating teal leaves with golden veins on every teal plate — same mood as the DNA video */
+(function(){
+  var SEL='.sec.navy,.ft .box,.pban.drk .box,.cta-band.drk,.cmp,.drs,.msw-panel,.pdb.drk,.card.dk';
+  var n=0;
+  function leaf(){var id='lvg'+(n++);
+    return '<svg viewBox="0 0 60 100" aria-hidden="true" focusable="false"><defs><linearGradient id="'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C8F6F1" stop-opacity=".95"/><stop offset=".55" stop-color="#3DBFB9" stop-opacity=".85"/><stop offset="1" stop-color="#075F64" stop-opacity=".9"/></linearGradient></defs>'+
+      '<path d="M30 2C53 22 57 63 30 98C3 63 7 22 30 2Z" fill="url(#'+id+')" stroke="#E2B85C" stroke-opacity=".55" stroke-width="1"/>'+
+      '<path d="M30 7V95" stroke="#F0CF83" stroke-opacity=".8" stroke-width="1.3" fill="none"/>'+
+      '<path d="M30 28l-11-9M30 28l11-9M30 46l-14-10M30 46l14-10M30 64l-13-9M30 64l13-9M30 80l-9-7M30 80l9-7" stroke="#F0CF83" stroke-opacity=".5" stroke-width=".8" fill="none"/></svg>';}
+  function rnd(a,b){return a+Math.random()*(b-a);}
+  function decorate(el){
+    if(el.querySelector(':scope > .lv-layer'))return;
+    var cs=getComputedStyle(el);
+    if(cs.position==='static')el.style.position='relative';
+    el.style.isolation='isolate';
+    var h=el.offsetHeight||400,cnt=Math.max(4,Math.min(9,Math.round(h/260))),html='';
+    for(var i=0;i<cnt;i++){
+      var side=i%2?rnd(78,96):rnd(-6,10);         /* keep leaves near the edges, away from text */
+      var s=Math.round(rnd(44,96));
+      html+=leaf().replace('<svg ','<svg style="--x:'+side.toFixed(1)+'%;--y:'+rnd(-4,92).toFixed(1)+'%;--s:'+s+'px;--o:'+rnd(.7,1).toFixed(2)+';--r:'+Math.round(rnd(-70,70))+'deg;--dx:'+Math.round(rnd(-18,18))+'px;--d:'+rnd(7,13).toFixed(1)+'s;--dl:-'+rnd(0,8).toFixed(1)+'s" ');
+    }
+    var d=document.createElement('div');d.className='lv-layer';d.setAttribute('aria-hidden','true');d.innerHTML=html;
+    el.insertBefore(d,el.firstChild);
+  }
+  function run(){document.querySelectorAll(SEL).forEach(decorate);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+})();
