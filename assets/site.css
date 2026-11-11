@@ -1790,12 +1790,14 @@ html body .sec.navy a.pill-line,html body .sec.navy a.pill-line span{color:#0A2E
 .rd-col-next ol::before{background:rgba(255,255,255,.75)!important;width:2px!important;left:14.5px!important}
 .rd-next .rd-dot{background:#fff!important;color:#0A7A80!important;border:0!important;box-shadow:0 0 0 4px rgba(255,255,255,.18)}
 /* floating leaves (as in the DNA video) */
-.lv-layer{position:absolute;inset:0;z-index:-1;overflow:hidden;border-radius:inherit;pointer-events:none}
+.lv-layer{display:none!important;position:absolute;inset:0;z-index:-1;overflow:hidden;border-radius:inherit;pointer-events:none}
 .lv-layer svg{position:absolute;width:var(--s);height:var(--s);left:var(--x);top:var(--y);opacity:var(--o);transform:rotate(var(--r));animation:lvf var(--d) ease-in-out var(--dl) infinite alternate;filter:drop-shadow(0 6px 10px rgba(3,40,44,.25))}
 @keyframes lvf{0%{transform:translate(0,0) rotate(var(--r))}50%{transform:translate(calc(var(--dx)*.5),-14px) rotate(calc(var(--r) + 8deg))}100%{transform:translate(var(--dx),6px) rotate(calc(var(--r) - 6deg))}}
 @media (prefers-reduced-motion:reduce){.lv-layer svg{animation:none}}
-/* v55: home hero now plays the Nauka DNA video */
-.hero2 video,.hero2 .poster,.hero2 .vfb{object-position:62% 50%!important}
 html body .sec.navy .rd-col .rd-done span.rd-dot,html body .rd-done span.rd-dot{color:#fff!important;font-weight:700}
 html body .msw-panel .track li.cur b{background:radial-gradient(circle at 32% 28%,#FFF6DC 0%,#F4D78F 30%,#D8A854 70%,#9A6430 100%)!important;color:#3A2A0E!important;text-shadow:none}
 html body .sec.navy .rd-col-next .rd-next span.rd-dot,html body .rd-next span.rd-dot{color:#0A7A80!important;text-shadow:none!important;font-weight:700}
+/* v56: play button off Bombushkar's face — bottom-right corner, next to the caption */
+.mf-v .mf-play{left:auto!important;top:auto!important;right:22px!important;bottom:18px!important;margin:0!important;width:58px!important;height:58px!important}
+.mf-v .mf-play::before{left:22px!important;top:17px!important;border-left-width:16px!important;border-top-width:12px!important;border-bottom-width:12px!important}
+.mf-v .mf-cap{right:96px}
