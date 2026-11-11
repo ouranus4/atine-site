@@ -313,3 +313,11 @@ els.forEach(function(el){io.observe(el);});
 })();
 
 /* v47: static logo loader - no progress script */
+
+/* v58: «ATINE — не фіточай» rows appear one by one on scroll */
+(function(){
+  var c=document.querySelector('.cmp');if(!c||!('IntersectionObserver' in window))return;
+  c.classList.add('cmp-anim');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){c.classList.add('cmp-in');io.disconnect();}});},{threshold:.2});
+  io.observe(c);
+})();

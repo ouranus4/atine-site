@@ -1801,14 +1801,36 @@ html body .sec.navy .rd-col-next .rd-next span.rd-dot,html body .rd-next span.rd
 .mf-v .mf-play{left:auto!important;top:auto!important;right:22px!important;bottom:18px!important;margin:0!important;width:58px!important;height:58px!important}
 .mf-v .mf-play::before{left:22px!important;top:17px!important;border-left-width:16px!important;border-top-width:12px!important;border-bottom-width:12px!important}
 .mf-v .mf-cap{right:96px}
-/* v57: generated leaf backgrounds on teal plates (leaves only at the sides, barely visible) */
-.sec.navy,.ft .box,.cta-band.drk,.pdb.drk,.drs,.pban.drk .box{background:url(img/lv_16x9.jpg) center/cover no-repeat,var(--grad-alex)!important}
-.cmp,.msw-panel{background:url(img/lv_4x3.jpg) center/cover no-repeat,var(--grad-alex)!important}
-.sumbox,.card.dk,.calc-sum{background:url(img/lv_1x1.jpg) center/cover no-repeat,var(--grad-alex)!important}
-@media (max-width:760px){
-  .sec.navy,.ft .box,.cmp{background:url(img/lv_9x16.jpg) center/cover no-repeat,var(--grad-alex)!important}
-  .msw-panel,.cta-band.drk,.pdb.drk,.drs,.pban.drk .box{background:url(img/lv_1x1.jpg) center/cover no-repeat,var(--grad-alex)!important}
-}
 /* v57: monograph is now a photo */
 .book.book-img{height:auto;perspective:none;display:flex;justify-content:center}
 .book.book-img img{display:block;width:100%;max-width:420px;height:auto;border-radius:20px;box-shadow:0 24px 50px -28px rgba(3,70,76,.55)}
+/* v58: leaves as a separate transparent layer over our centered gradient — no gold haze, same density at any block height */
+.sec.navy,.ft .box,.cta-band.drk,.pdb.drk,.drs,.pban.drk .box{background:url(img/lvo_wide.webp) center top/100% auto repeat-y,var(--grad-alex)!important}
+.cmp,.msw-panel{background:url(img/lvo_43_blur.webp) center/100% 100% no-repeat,var(--grad-alex)!important}
+.sumbox,.card.dk,.calc-sum{background:url(img/lvo_sq.webp) center/cover no-repeat,var(--grad-alex)!important}
+.leafs{display:none!important}
+@media (max-width:760px){
+  .sec.navy,.ft .box,.cta-band.drk,.pdb.drk,.drs,.pban.drk .box{background:url(img/lvo_tall.webp) center top/100% auto repeat-y,var(--grad-alex)!important}
+  .cmp,.msw-panel{background:url(img/lvo_tall_blur.webp) center top/100% auto repeat-y,var(--grad-alex)!important}
+  .hero2{background:url(img/lvo_tall.webp) center top/100% auto repeat-y,var(--grad-alex)!important}
+}
+/* v58: plain flat circles instead of 3D pearls */
+html body .msw-panel .track b{background:transparent!important;border:1.5px solid rgba(255,255,255,.7)!important;color:#fff!important;box-shadow:none!important;text-shadow:none!important}
+html body .msw-panel .track li.cur b{background:#fff!important;border-color:#fff!important;color:#0A7A80!important}
+html body .mprev,html body .mnext{background:transparent!important;border:1.5px solid rgba(255,255,255,.7)!important;box-shadow:none!important;color:#fff!important}
+html body .rd-done span.rd-dot{background:#0A7A80!important;color:#fff!important;text-shadow:none!important;box-shadow:none!important}
+html body .mf-play{background:rgba(255,255,255,.92)!important;box-shadow:0 0 0 8px rgba(255,255,255,.22)!important}
+html body .mf-play::before{border-left-color:#0A7A80!important}
+/* v58: «ATINE — не фіточай» — text appears on scroll */
+.cmp.cmp-anim .cmp-h,.cmp.cmp-anim tr{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.cmp.cmp-anim.cmp-in .cmp-h,.cmp.cmp-anim.cmp-in tr{opacity:1;transform:none}
+.cmp.cmp-in thead tr{transition-delay:.15s}
+.cmp.cmp-in tbody tr:nth-child(1){transition-delay:.3s}.cmp.cmp-in tbody tr:nth-child(2){transition-delay:.45s}.cmp.cmp-in tbody tr:nth-child(3){transition-delay:.6s}.cmp.cmp-in tbody tr:nth-child(4){transition-delay:.75s}.cmp.cmp-in tbody tr:nth-child(5){transition-delay:.9s}
+@media (prefers-reduced-motion:reduce){.cmp.cmp-anim .cmp-h,.cmp.cmp-anim tr{opacity:1;transform:none;transition:none}}
+@media (max-width:760px){.hero2-in{background:url(img/lvo_tall.webp) center top/100% auto repeat-y}}
+/* v58: page banners on phones — visible leaves + soft transition from teal into the photo */
+@media (max-width:760px){
+  .pban.drk .box{background:url(img/lvo_sq.webp) center top/100% auto no-repeat,var(--grad-alex)!important}
+  .pban.drk .ph::before{background:linear-gradient(180deg,#0B6F74 0%,rgba(11,111,116,.75) 14%,rgba(11,111,116,.25) 34%,rgba(11,111,116,0) 52%)!important;z-index:1}
+  .pban.drk .ph{margin-top:-1px;position:relative}
+}
