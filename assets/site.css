@@ -1843,3 +1843,23 @@ html body .mf-play::before{border-left-color:#0A7A80!important}
   .sec.navy,.ft .box,.cta-band.drk,.pdb.drk,.drs{background:#0A6E73 url(img/bgp_tall.jpg) center/cover no-repeat!important}
   .cmp,.msw-panel,.pban.drk .box,.sumbox,.card.dk,.calc-sum{background:#0A6E73 url(img/bgp_34.jpg) center/cover no-repeat!important}
 }
+/* v62: home loader — video with Doctor Bombushkar; logo moved to the dark top so it never covers his face */
+html body .pre.pre-doc{background:#03464C url(video/loader_bg.jpg) center/cover no-repeat!important;display:block!important}
+html body .pre.pre-doc .pre-stage{display:none!important}
+html body .pre.pre-doc .pre-dv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;z-index:0}
+html body .pre.pre-doc .vfb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;z-index:0}
+html body .pre.pre-doc::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(3,40,44,.78) 0%,rgba(3,40,44,.35) 18%,rgba(3,40,44,0) 32%)}
+html body .pre.pre-doc .pre-in{position:absolute!important;left:50%;top:max(18px,3.5vh);transform:translateX(-50%)!important;margin:0!important;z-index:3!important;flex-direction:row!important;align-items:center!important;gap:12px!important;white-space:nowrap}
+html body .pre.pre-doc .pre-logo{width:58px!important;height:58px!important}
+html body .pre.pre-doc .pre-word{font-size:30px!important;letter-spacing:.3em}
+html body .pre.pre-doc .pre-in small{display:none}
+html body .pre.pre-doc .pre-foot,html body .pre.pre-doc .pre-pct{display:none!important}
+@media (min-width:760px){
+  html body .pre.pre-doc .pre-dv,html body .pre.pre-doc .vfb{left:auto;right:8vw;width:auto;height:100%;aspect-ratio:9/16;object-fit:cover;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%)}
+  html body .pre.pre-doc::after{background:linear-gradient(90deg,rgba(3,52,57,.94) 0%,rgba(3,52,57,.86) 40%,rgba(3,52,57,.35) 58%,rgba(3,52,57,0) 68%)}
+  html body .pre.pre-doc .pre-in{left:10vw;top:50%;transform:translateY(-50%)!important;flex-direction:column!important;align-items:flex-start!important;gap:16px!important}
+  html body .pre.pre-doc .pre-logo{width:96px!important;height:96px!important}
+  html body .pre.pre-doc .pre-word{font-size:46px!important}
+  html body .pre.pre-doc .pre-in small{display:block;font-size:13px;letter-spacing:.32em;color:#F3DFA8}
+}
