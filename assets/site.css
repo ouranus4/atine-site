@@ -1836,3 +1836,10 @@ html body .mf-play::before{border-left-color:#0A7A80!important}
 }
 @keyframes goldSweep{0%{background-position:100% 0}55%,100%{background-position:0% 0}}
 @media (prefers-reduced-motion:reduce){html body :is(.hero2 h1 em,.sec.navy h2 em,.drs h2 em,.cmp h3 em,.cta-band.drk h2 em,.pban.drk h1 em,.pdb.drk em,.msw-panel em,.ft .big em,.dna .cap b,.facts b){animation:none!important}}
+/* v61: generated minimal backgrounds (clean teal + one tiny pearl) on teal plates */
+.sec.navy,.ft .box,.cta-band.drk,.pdb.drk,.drs,.pban.drk .box{background:#0A6E73 url(img/bgp_wide.jpg) center/cover no-repeat!important}
+.cmp,.msw-panel,.sumbox,.card.dk,.calc-sum{background:#0A6E73 url(img/bgp_43.jpg) center/cover no-repeat!important}
+@media (max-width:760px){
+  .sec.navy,.ft .box,.cta-band.drk,.pdb.drk,.drs{background:#0A6E73 url(img/bgp_tall.jpg) center/cover no-repeat!important}
+  .cmp,.msw-panel,.pban.drk .box,.sumbox,.card.dk,.calc-sum{background:#0A6E73 url(img/bgp_34.jpg) center/cover no-repeat!important}
+}
