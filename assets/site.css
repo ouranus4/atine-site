@@ -1805,12 +1805,7 @@ html body .sec.navy .rd-col-next .rd-next span.rd-dot,html body .rd-next span.rd
 .book.book-img{height:auto;perspective:none;display:flex;justify-content:center}
 .book.book-img img{display:block;width:100%;max-width:420px;height:auto;border-radius:20px;box-shadow:0 24px 50px -28px rgba(3,70,76,.55)}
 /* v58: leaves as a separate transparent layer over our centered gradient — no gold haze, same density at any block height */
-.sec.navy,.ft .box,.cta-band.drk,.pdb.drk,.drs,.pban.drk .box{background:url(img/lvo_wide.webp) center top/100% auto repeat-y,var(--grad-alex)!important}
-.cmp,.msw-panel{background:url(img/lvo_43_blur.webp) center/100% 100% no-repeat,var(--grad-alex)!important}
-.sumbox,.card.dk,.calc-sum{background:url(img/lvo_sq.webp) center/cover no-repeat,var(--grad-alex)!important}
 @media (max-width:760px){
-  .sec.navy,.ft .box,.cta-band.drk,.pdb.drk,.drs,.pban.drk .box{background:url(img/lvo_tall.webp) center top/100% auto repeat-y,var(--grad-alex)!important}
-  .cmp,.msw-panel{background:url(img/lvo_tall_blur.webp) center top/100% auto repeat-y,var(--grad-alex)!important}
 }
 /* v58: plain flat circles instead of 3D pearls */
 html body .msw-panel .track b{background:transparent!important;border:1.5px solid rgba(255,255,255,.7)!important;color:#fff!important;box-shadow:none!important;text-shadow:none!important}
@@ -1827,7 +1822,17 @@ html body .mf-play::before{border-left-color:#0A7A80!important}
 @media (prefers-reduced-motion:reduce){.cmp.cmp-anim .cmp-h,.cmp.cmp-anim tr{opacity:1;transform:none;transition:none}}
 /* v58: page banners on phones — visible leaves + soft transition from teal into the photo */
 @media (max-width:760px){
-  .pban.drk .box{background:url(img/lvo_sq.webp) center top/100% auto no-repeat,var(--grad-alex)!important}
   .pban.drk .ph::before{background:linear-gradient(180deg,#0B6F74 0%,rgba(11,111,116,.75) 14%,rgba(11,111,116,.25) 34%,rgba(11,111,116,0) 52%)!important;z-index:1}
   .pban.drk .ph{margin-top:-1px;position:relative}
 }
+/* v60: gold words — clean bright polished gold, no dark shadow, visible light sweep */
+@supports (-webkit-background-clip:text) or (background-clip:text){
+  html body :is(.hero2 h1 em,.sec.navy h2 em,.drs h2 em,.cmp h3 em,.cta-band.drk h2 em,.pban.drk h1 em,.pdb.drk em,.msw-panel em,.ft .big em,.dna .cap b,.facts b){
+    background:linear-gradient(105deg,#E7C27A 0%,#F4D995 30%,#E7C27A 40%,#FFF8E2 50%,#E7C27A 60%,#F4D995 70%,#E7C27A 100%)!important;
+    background-size:300% 100%!important;background-position:100% 0;
+    -webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;color:#EFCF86!important;
+    text-shadow:none!important;filter:none!important;
+    animation:goldSweep 4.5s ease-in-out infinite!important}
+}
+@keyframes goldSweep{0%{background-position:100% 0}55%,100%{background-position:0% 0}}
+@media (prefers-reduced-motion:reduce){html body :is(.hero2 h1 em,.sec.navy h2 em,.drs h2 em,.cmp h3 em,.cta-band.drk h2 em,.pban.drk h1 em,.pdb.drk em,.msw-panel em,.ft .big em,.dna .cap b,.facts b){animation:none!important}}
