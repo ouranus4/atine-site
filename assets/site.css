@@ -1940,3 +1940,5 @@ html body .dna .dna-v,html body .dna .dna-p,html body .dna .vfb{object-position:
 @media (max-width:860px){html body .hero2 .poster{object-position:50% 30%!important}}
 /* v72: phones — «Хто ви?» goes above the Formula card */
 @media (max-width:860px){html body .home3 .who{order:-1}}
+/* v75: monograph heading = book title (long) */
+html body .mono h2{font-size:clamp(26px,2.8vw,40px)!important;line-height:1.12!important}
