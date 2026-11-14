@@ -1942,3 +1942,7 @@ html body .dna .dna-v,html body .dna .dna-p,html body .dna .vfb{object-position:
 @media (max-width:860px){html body .home3 .who{order:-1}}
 /* v75: monograph heading = book title (long) */
 html body .mono h2{font-size:clamp(26px,2.8vw,40px)!important;line-height:1.12!important}
+/* v76: product photos on pure white (new unified packshots) */
+html body .gal .main,html body .gal .thumbs button,html body .gal .th,html body .pcard .im,html body .citem .im,html body .pc .im{background:#fff!important}
+html body .gal .main img,html body .pcard .im img,html body .citem .im img,html body .pc .im img{mix-blend-mode:normal!important}
+html body .gal .main{border:1px solid #EFE7DA}
