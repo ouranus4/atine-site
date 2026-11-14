@@ -1954,3 +1954,9 @@ html body :is(.pc,.gal,.fs,.qz-r,.pcard,.citem) img:is([src*="ph_tea"],[src*="ph
 html body article.pc .media{display:grid!important;place-items:center!important}
 html body article.pc .media img{width:min(100%,260px)!important;height:auto!important;aspect-ratio:1/1!important;max-height:none!important;object-fit:contain!important;margin:0 auto!important;transform:none!important}
 @media (max-width:760px){html body article.pc .media img{width:min(100%,270px)!important}}
+/* v78: catalog cards — no empty gap above the product; one image box height for all */
+html body article.pc{min-height:0!important}
+html body article.pc .media{flex:0 0 auto!important;min-height:0!important;padding:14px 0 6px!important;margin:0!important}
+html body article.pc .media img{width:100%!important;max-width:300px!important;height:200px!important;aspect-ratio:auto!important;object-fit:contain!important}
+@media (max-width:760px){html body article.pc .media img{height:190px!important}}
+html body .pcard .im img,html body .gal .main img{object-fit:contain!important}
