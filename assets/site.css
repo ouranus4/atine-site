@@ -1946,3 +1946,11 @@ html body .mono h2{font-size:clamp(26px,2.8vw,40px)!important;line-height:1.12!i
 html body .gal .main,html body .gal .thumbs button,html body .gal .th,html body .pcard .im,html body .citem .im,html body .pc .im{background:#fff!important}
 html body .gal .main img,html body .pcard .im img,html body .citem .im img,html body .pc .im img{mix-blend-mode:normal!important}
 html body .gal .main{border:1px solid #EFE7DA}
+/* v77: every product photo sits on pure white — catalog cards, gallery thumbs, scheme picker, quiz */
+html body article.pc{background:#fff!important}
+html body .gal button,html body .gal .thumbs button{background:#fff!important}
+html body :is(.pc,.gal,.fs,.qz-r,.pcard,.citem) img:is([src*="ph_tea"],[src*="ph_caps"],[src*="ph_thick"],[src*="ph_dry"],[src*="cut_tabs"]){mix-blend-mode:normal!important;background:#fff;border-radius:12px}
+/* v77: catalog — every product photo the same size, whatever the card shape */
+html body article.pc .media{display:grid!important;place-items:center!important}
+html body article.pc .media img{width:min(100%,260px)!important;height:auto!important;aspect-ratio:1/1!important;max-height:none!important;object-fit:contain!important;margin:0 auto!important;transform:none!important}
+@media (max-width:760px){html body article.pc .media img{width:min(100%,270px)!important}}
