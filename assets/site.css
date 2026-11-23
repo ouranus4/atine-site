@@ -1960,3 +1960,90 @@ html body article.pc .media{flex:0 0 auto!important;min-height:0!important;paddi
 html body article.pc .media img{width:100%!important;max-width:300px!important;height:200px!important;aspect-ratio:auto!important;object-fit:contain!important}
 @media (max-width:760px){html body article.pc .media img{height:190px!important}}
 html body .pcard .im img,html body .gal .main img{object-fit:contain!important}
+/* v79: home catalog — tea as a wide hero card, then 4 equal squares; brand identity (teal + gold) */
+.pgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pk{position:relative;isolation:isolate;overflow:hidden;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:14px;color:#fff;
+  background:radial-gradient(70% 60% at 50% 38%,rgba(255,255,255,.22),rgba(255,255,255,0) 70%),radial-gradient(120% 95% at 50% 42%,#1CA9A8 0%,#14918F 32%,#0A7A80 58%,#0A676B 80%,#03464C 100%);
+  box-shadow:0 24px 50px -30px rgba(3,70,76,.7);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.pk::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 18% 22%,rgba(243,217,149,.55) 0 1.5px,transparent 2.5px),radial-gradient(circle at 82% 14%,rgba(243,217,149,.45) 0 1px,transparent 2px),radial-gradient(circle at 70% 80%,rgba(243,217,149,.4) 0 1.5px,transparent 2.5px),radial-gradient(circle at 30% 70%,rgba(255,255,255,.35) 0 1px,transparent 2px),radial-gradient(60% 45% at 85% 0%,rgba(255,230,170,.22),transparent 70%)}
+.pk:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(3,70,76,.85)}
+.pk-im{display:grid;place-items:center;aspect-ratio:1/1;width:100%}
+.pk-im img{width:88%;height:88%;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(2,40,44,.45));transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.pk:hover .pk-im img{transform:scale(1.04)}
+.pk-tx{display:flex;flex-direction:column;gap:6px;margin-top:auto}
+html body .pk h3{font-size:20px;letter-spacing:-.01em;margin:0}
+html body .pk h3 a,html body .pk h3{color:#fff!important;text-decoration:none;text-shadow:none!important}
+html body .pk .spec{color:#CDEBE9!important;font-size:13px}
+html body .pk .d{color:#E4F6F5!important;font-size:14.5px;line-height:1.5;margin:6px 0 0;text-shadow:none!important}
+.pk-bt{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+html body .pk .price{font:500 22px/1 var(--f);color:#F3D995!important;-webkit-text-fill-color:#F3D995!important;background:none!important}
+.pill-gold-s{all:unset;cursor:pointer;padding:10px 16px;border-radius:999px;font:600 13.5px var(--f);color:#3A2A0E;background:linear-gradient(135deg,#F6E3A8,#E2B85C 55%,#C9973A);box-shadow:0 8px 18px -10px rgba(0,0,0,.5);transition:filter .2s}
+.pill-gold-s:hover{filter:brightness(1.07)}
+.pk-main{grid-column:1/-1;flex-direction:row;align-items:center;gap:28px;padding:28px 36px}
+.pk-main .pk-im{flex:0 0 48%;aspect-ratio:16/10}
+.pk-main .pk-tx{margin:0;max-width:44ch}
+html body .pk-main h3{font-size:34px}
+.pk-yt{display:inline-block;margin-top:18px;color:var(--t-ink);font-weight:500;text-decoration:none}
+@media (max-width:900px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pk{padding:14px;border-radius:20px}html body .pk h3{font-size:16px}html body .pk .price{font-size:18px}.pk-bt{flex-direction:column;align-items:flex-start;gap:8px}.pill-gold-s{padding:8px 13px;font-size:12.5px}
+  .pk-main{flex-direction:column;align-items:stretch;padding:18px;gap:10px}.pk-main .pk-im{flex:none;aspect-ratio:16/10}html body .pk-main h3{font-size:24px}.pk-main .pk-bt{flex-direction:row;align-items:center}}
+@media (prefers-reduced-motion:reduce){.pk,.pk-im img{transition:none}}
+/* v79: key questions from the monograph (Likaryam) */
+.kq{margin:0 0 34px}
+.kq-main{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0 16px}
+.kq-card{position:relative;background:#fff;border:1.5px solid #D8A854;border-radius:22px;padding:26px;box-shadow:0 18px 40px -28px rgba(3,70,76,.5)}
+.kq-card::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:4px;border-radius:0 4px 4px 0;background:linear-gradient(180deg,#F3D995,#C9973A)}
+.kq-n{display:inline-block;font:600 11.5px var(--f);letter-spacing:.14em;text-transform:uppercase;color:#9A6430;background:#FBF3E2;border-radius:999px;padding:6px 12px}
+.kq-card h3{font-size:21px;line-height:1.25;margin:12px 0 10px;color:#0A2E35}
+.kq-card p,.kq-card li{font-size:14.5px;line-height:1.6;color:#2F4C52}
+.kq-card ul{margin:10px 0 0;padding-left:18px;display:grid;gap:8px}
+.kq-acc .body ul,.kq-acc .body ol{padding-left:20px;display:grid;gap:8px;margin:8px 0}
+.kq-acc .body p{margin:0 0 10px}
+@media (max-width:860px){.kq-main{grid-template-columns:1fr}.kq-card{padding:20px}.kq-card h3{font-size:18px}}
+.ex-intro{max-width:70ch;color:var(--ink2);margin:0 0 22px;font-size:15.5px;line-height:1.6}
+.ex-intro{max-width:70ch;color:var(--ink2);margin:0 0 22px;font-size:15.5px;line-height:1.6}
+/* v79: prominent mission block on the home page */
+.mis-home{padding-block:clamp(40px,6vw,80px)}
+.mis-box{position:relative;overflow:hidden;isolation:isolate;border-radius:32px;padding:clamp(32px,5vw,72px);text-align:center;color:#fff;
+  background:radial-gradient(60% 70% at 50% 0%,rgba(255,236,190,.28),transparent 70%),radial-gradient(120% 95% at 50% 42%,#1CA9A8 0%,#14918F 32%,#0A7A80 58%,#0A676B 80%,#03464C 100%)}
+.mis-box::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/gold.png) center/min(70%,520px) no-repeat;opacity:.08}
+html body .mis-box .lbl{color:#F3D995!important}
+html body .mis-box h2{color:#fff!important;font-size:clamp(28px,3.6vw,50px);line-height:1.1;max-width:22ch;margin:14px auto 18px}
+html body .mis-box p{color:#E4F6F5!important;max-width:62ch;margin:0 auto 26px;font-size:16.5px;line-height:1.6}
+.mis-box h2 em{color:#F3D995!important;-webkit-text-fill-color:#F3D995!important;background:none!important;font-style:normal}
+/* v79: scientific assets (2 reports highlighted) + hot news */
+.sa-lead{max-width:72ch;color:var(--ink2);margin:6px 0 24px;font-size:15.5px;line-height:1.6}
+.sa-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:14px}
+.sa{background:#fff;border:1px solid #EFE7DA;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.sa b{font:400 54px/1 var(--f);letter-spacing:-.03em;background:linear-gradient(180deg,#E2B85C,#9A6430);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sa span{font-weight:600;color:#0A2E35}
+.sa p{font-size:13.5px;color:#557178;margin:0}
+.sa-key{color:#fff;background:radial-gradient(120% 95% at 50% 42%,#1CA9A8 0%,#0A7A80 58%,#03464C 100%);border:0}
+html body .sa-key span{color:#fff!important}
+html body .sa-key p{color:#E4F6F5!important}
+.sa-key b{background:linear-gradient(180deg,#FFF1C8,#E2B85C);-webkit-background-clip:text;background-clip:text}
+.sa-key small{margin-top:auto;color:#F3D995;font-size:12.5px}
+.nws-hot{border:1.5px solid #D8A854!important}
+.nws-more{display:inline-block;margin-top:10px;font-weight:600;color:#9A6430;text-decoration:none}
+@media (max-width:900px){.sa-grid{grid-template-columns:1fr 1fr}.sa-key{grid-column:1/-1}.sa b{font-size:44px}}
+/* v79: background line drawings — roots (as on the Vol.1 title page) instead of flowers */
+html body span.bot:not(.ft .bot),html body .sdeco{background:url(img/roots_line_teal.png) center/contain no-repeat;aspect-ratio:500/415!important;height:auto!important}
+html body span.bot:not(.ft .bot) svg,html body .sdeco svg{display:none!important}
+html body .pban.drk span.bot,html body .sec.navy .sdeco,html body .drs .sdeco{background-image:url(img/roots_line_gold.png)}
+html body .pban.has-ph span.bot{width:190px!important}
+@media (max-width:860px){html body .pban.has-ph span.bot,html body .pban:not(.has-ph) span.bot{width:110px!important}}
+/* v79: ATINE on the first screen — larger, bolder, metallic gold with a light sweep */
+html body .hero-logo b{font-weight:800!important;font-size:clamp(40px,4.6vw,60px)!important;letter-spacing:.2em!important;
+  background:linear-gradient(105deg,#B8862F 0%,#F6DE9A 22%,#FFF6D8 32%,#E2B85C 45%,#A8742A 62%,#F3D58C 80%,#C9973A 100%)!important;background-size:250% 100%!important;
+  -webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;color:#E2B85C!important;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))!important;text-shadow:none!important;animation:goldSweep 5s ease-in-out infinite}
+html body .hero-logo small{font-weight:600!important;letter-spacing:.32em!important;font-size:13px!important}
+@media (max-width:760px){html body .hero-logo b{font-size:40px!important}}
+/* v79: soft sun glare on teal sections */
+html body .sec.navy{background:radial-gradient(45% 40% at 88% 6%,rgba(255,232,170,.22),transparent 70%),radial-gradient(30% 30% at 8% 96%,rgba(255,232,170,.12),transparent 70%),#0A6E73 url(img/bgp_wide.jpg) center/cover no-repeat!important}
+@media (max-width:760px){html body .sec.navy{background:radial-gradient(70% 30% at 90% 3%,rgba(255,232,170,.22),transparent 70%),#0A6E73 url(img/bgp_tall.jpg) center/cover no-repeat!important}}
+/* v79: contact banner — large translucent gold logo */
+html body .pban.contacts-ban .box{position:relative;isolation:isolate}
+html body .pban.contacts-ban .box::after{content:"";position:absolute;right:-60px;top:50%;width:min(60vw,560px);aspect-ratio:1;transform:translateY(-50%);background:url(img/gold.png) center/contain no-repeat;opacity:.14;z-index:0;pointer-events:none}
+/* v79: gold particles canvas in the hero */
+.hero2 .gp{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+html body .hero2 .leafs{display:block!important;z-index:1}

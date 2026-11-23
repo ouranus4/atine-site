@@ -322,3 +322,21 @@ els.forEach(function(el){io.observe(el);});
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){c.classList.add('cmp-in');io.disconnect();}});},{threshold:.2});
   io.observe(c);
 })();
+
+/* v79: shimmering gold particles drifting on the first screen */
+(function(){
+  var h=document.querySelector('.hero2');if(!h||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var c=document.createElement('canvas');c.className='gp';c.setAttribute('aria-hidden','true');h.appendChild(c);
+  var x=c.getContext('2d'),W,H,dpr=Math.min(2,window.devicePixelRatio||1),P=[];
+  function size(){W=h.clientWidth;H=h.clientHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);}
+  size();addEventListener('resize',size);
+  var N=Math.round(Math.min(70,Math.max(30,W/18)));
+  for(var i=0;i<N;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:.6+Math.random()*1.9,vx:.15+Math.random()*.35,vy:-.08-Math.random()*.25,t:Math.random()*6.28,s:.01+Math.random()*.03});
+  var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting;}).observe(h);
+  (function loop(){requestAnimationFrame(loop);if(!vis||document.hidden)return;x.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){var p=P[i];p.x+=p.vx;p.y+=p.vy;p.t+=p.s;if(p.x>W+5)p.x=-5;if(p.y<-5)p.y=H+5;
+      var a=.35+.55*Math.abs(Math.sin(p.t));var g=x.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);
+      g.addColorStop(0,'rgba(255,236,180,'+a+')');g.addColorStop(.4,'rgba(232,196,122,'+(a*.5)+')');g.addColorStop(1,'rgba(232,196,122,0)');
+      x.fillStyle=g;x.beginPath();x.arc(p.x,p.y,p.r*4,0,6.283);x.fill();}
+  })();
+})();
