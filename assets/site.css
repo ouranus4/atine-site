@@ -2114,3 +2114,7 @@ html body .sv-block h3,html body .sci-m h3{color:#0A676B!important}
 html body .sv-block .sm-n,html body .sci-m .sm-n{color:#6b7c80!important}
 html body .sv-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))!important}
 @media (max-width:560px){html body .sv-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+/* v87: optical centering of spaced loader text (letter-spacing adds trailing space) */
+html body .pre .pre-in{text-align:center}
+html body .pre .pre-word{padding-left:.3em!important;margin-left:0!important;margin-right:0!important;text-align:center!important}
+html body .pre .pre-in small{padding-left:.3em!important;margin-left:0!important;margin-right:0!important;text-align:center!important}
