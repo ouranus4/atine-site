@@ -2118,3 +2118,10 @@ html body .sv-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))!imp
 html body .pre .pre-in{text-align:center}
 html body .pre .pre-word{padding-left:.3em!important;margin-left:0!important;margin-right:0!important;text-align:center!important}
 html body .pre .pre-in small{padding-left:.3em!important;margin-left:0!important;margin-right:0!important;text-align:center!important}
+html body .tm8-pop li a{color:#14303A;text-decoration:underline;text-decoration-color:rgba(216,168,84,.7);text-underline-offset:3px}
+html body .tm8-pop li a:hover{color:#0A676B}
+html body .tm8-pop small a{color:#0A676B;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+html body .tm8-pop::after{content:"";position:absolute;left:0;right:0;top:100%;height:14px}
+html body .nectar-soon .ns-ph{flex:none;width:200px;background:#fff;border-radius:16px;padding:10px;display:grid;place-items:center}
+html body .nectar-soon .ns-ph img{width:100%;height:auto;object-fit:contain;filter:none;margin:0}
+@media (max-width:560px){html body .nectar-soon .ns-ph{width:100%}}
