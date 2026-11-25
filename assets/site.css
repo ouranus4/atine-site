@@ -2102,3 +2102,5 @@ html body .sm-list li b{display:block;font-weight:600;color:#14303A}
 html body .sm-list li span{color:#6b7c80;font-size:12px}
 @media (max-width:560px){html body .sm-st{grid-template-columns:repeat(2,minmax(0,1fr))}html body .sci-m{padding:16px}}
 html body .nectar-soon .ns-price{display:inline-block;margin-left:10px;padding:2px 12px;border-radius:99px;background:rgba(243,217,149,.16);color:#F3D995;font-size:.7em;vertical-align:middle;font-family:var(--sans,sans-serif)}
+html body .sa-docs{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+html body .sa-docs a{color:#F3D995!important;font-weight:600;font-size:13.5px;text-decoration:underline;text-underline-offset:3px}
