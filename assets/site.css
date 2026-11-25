@@ -2129,3 +2129,4 @@ html body .nectar-soon .ns-ph img{width:100%;height:auto;object-fit:contain;filt
 html body #catalog,html body #shop{position:relative;isolation:isolate;overflow:hidden}
 html body #catalog::before,html body #shop::before{content:"";position:absolute;right:-6%;top:50%;width:min(70vw,760px);aspect-ratio:1;transform:translateY(-50%);background:url(img/gold.png) center/contain no-repeat;opacity:.08;z-index:-1;pointer-events:none}
 @media (max-width:860px){html body #catalog::before,html body #shop::before{right:-30%;top:22%;width:120vw;opacity:.07}}
+html body .dis-block .dis-t{font-weight:600;color:#14303A;margin:0 0 6px;font-size:15px;line-height:1.4}html body .dis-block .pill{margin-top:12px;display:inline-flex}
