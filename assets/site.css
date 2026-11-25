@@ -2125,3 +2125,7 @@ html body .tm8-pop::after{content:"";position:absolute;left:0;right:0;top:100%;h
 html body .nectar-soon .ns-ph{flex:none;width:200px;background:#fff;border-radius:16px;padding:10px;display:grid;place-items:center}
 html body .nectar-soon .ns-ph img{width:100%;height:auto;object-fit:contain;filter:none;margin:0}
 @media (max-width:560px){html body .nectar-soon .ns-ph{width:100%}}
+/* v89: large translucent gold ATINE emblem behind product sections (client request) */
+html body #catalog,html body #shop{position:relative;isolation:isolate;overflow:hidden}
+html body #catalog::before,html body #shop::before{content:"";position:absolute;right:-6%;top:50%;width:min(70vw,760px);aspect-ratio:1;transform:translateY(-50%);background:url(img/gold.png) center/contain no-repeat;opacity:.08;z-index:-1;pointer-events:none}
+@media (max-width:860px){html body #catalog::before,html body #shop::before{right:-30%;top:22%;width:120vw;opacity:.07}}
