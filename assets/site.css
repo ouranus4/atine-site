@@ -2135,3 +2135,10 @@ html body .dna .dna-p.dna-leaf{transform:none!important;object-position:60% 50%!
 html body .dna::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,40,44,.35) 0%,rgba(3,40,44,0) 30%,rgba(3,40,44,0) 60%,rgba(3,40,44,.55) 100%);pointer-events:none;z-index:1}
 html body .dna .lbl,html body .dna .cap{z-index:2}
 html body .pban.contacts-ban.has-ph .box::after{display:none}
+html body .dna .dna-v.dna-leaf{transform:none!important;object-position:50% 50%!important}
+/* v93: living hero video (Flow), fades in over the photo once playing */
+html body .hero2 video.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
+html body .hero2 video.hero-vid.on{opacity:1}
+@media (prefers-reduced-motion:reduce){html body .hero2 video.hero-vid{display:none}}
+html body .hero2.vid-on .leafs{display:none!important}
+html body .hero2 video.hero-vid{position:absolute!important;margin:0!important}
