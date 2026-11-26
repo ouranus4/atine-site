@@ -2130,3 +2130,8 @@ html body #catalog,html body #shop{position:relative;isolation:isolate;overflow:
 html body #catalog::before,html body #shop::before{content:"";position:absolute;right:-6%;top:50%;width:min(70vw,760px);aspect-ratio:1;transform:translateY(-50%);background:url(img/gold.png) center/contain no-repeat;opacity:.08;z-index:-1;pointer-events:none}
 @media (max-width:860px){html body #catalog::before,html body #shop::before{right:-30%;top:22%;width:120vw;opacity:.07}}
 html body .dis-block .dis-t{font-weight:600;color:#14303A;margin:0 0 6px;font-size:15px;line-height:1.4}html body .dis-block .pill{margin-top:12px;display:inline-flex}
+/* v92: generated visuals — leaf instead of DNA, contacts banner photo */
+html body .dna .dna-p.dna-leaf{transform:none!important;object-position:60% 50%!important;opacity:1!important}
+html body .dna::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,40,44,.35) 0%,rgba(3,40,44,0) 30%,rgba(3,40,44,0) 60%,rgba(3,40,44,.55) 100%);pointer-events:none;z-index:1}
+html body .dna .lbl,html body .dna .cap{z-index:2}
+html body .pban.contacts-ban.has-ph .box::after{display:none}
