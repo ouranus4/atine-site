@@ -2176,3 +2176,12 @@ html body .nectar-soon .ns-cert{display:inline-block;margin-top:10px;font-size:1
 .vol-fx .spk{position:absolute;width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle,#FFF4CF 0%,rgba(230,190,116,.85) 40%,transparent 70%);animation:volTw var(--d) ease-in-out var(--dl) infinite}
 @keyframes volTw{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1.15)}}
 @media (prefers-reduced-motion:reduce){.vol-fx .spk{animation:none;opacity:.6}}
+
+/* v98: client request 28.11 — all text left-aligned site-wide, no centred blocks */
+html body .mis-box,html body .decode,html body .sm-st li,html body .why h2,html body .proto,html body .nd,html body .empty{text-align:left!important}
+html body .mis-box h2,html body .mis-box p,html body .decode p{margin-left:0!important;margin-right:0!important}
+html body .mis-box .pill,html body .mis-box .btn{margin-left:0!important}
+html body .sm-st li{align-items:flex-start!important;justify-content:flex-start!important}
+/* v98: home product cards — image no longer stretches card height (was 294x604 with empty gap) */
+.pk:not(.pk-main) .pk-im{position:relative;min-height:0}
+.pk:not(.pk-main) .pk-im img{position:absolute;left:6%;top:6%;width:88%;height:88%}
